@@ -1,0 +1,35 @@
+@use "../abstracts/fanctions" as f;
+@use "../abstracts/mixins" as m;
+@use "./base_content" as *;
+
+.contact {
+    // @extend .base-content;
+    background-color: f.color(color-footer);
+    color: f.color(color-base);
+    margin-inline: auto;
+    padding-top: 9.375rem;
+    padding-bottom: 6.25rem;
+    border-radius: f.layout(radius-base) f.layout(radius-base) 0 0;
+
+    .contact-contents {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .c-section-title {
+            @include m.title-borderline(f.color(color-base));
+        }
+
+        .contact-forms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+            p {
+                font-size: 0.938rem;
+            }
+        }
+    }
+}
