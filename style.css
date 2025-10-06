@@ -58,6 +58,55 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
 }
 
+.works {
+  margin-bottom: 200px;
+}
+
+.contact {
+  background-color: #272727;
+  color: #ffffff;
+  margin-inline: auto;
+  padding-top: 9.375rem;
+  padding-bottom: 6.25rem;
+  border-radius: 20px 20px 0 0;
+}
+.contact .contact-contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contact-contents .c-section-title {
+  position: relative;
+}
+.contact .contact-contents .c-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 106px;
+  height: 2px;
+  background: #ffffff;
+}
+.contact .contact-contents .c-section-title::before {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  width: 61px;
+  height: 2px;
+  background: #ffffff;
+}
+.contact .contact-contents .contact-forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contact-contents .contact-forms p {
+  font-size: 0.938rem;
+}
+
 .c-title {
   position: relative;
   padding-bottom: 20px;
@@ -133,12 +182,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 .card .swiper-slide {
-  width: min(100%, 816px);
+  width: 816px;
   max-width: 816px;
 }
 @media screen and (max-width: 600px) {
   .card .swiper-slide {
-    width: min(100%, 464px);
+    width: 464px;
     max-width: 464px;
   }
 }
@@ -264,4 +313,25 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   opacity: 0.3;
   cursor: default;
+}
+
+.contact-button {
+  position: relative;
+  padding: 0.75rem 9.625rem;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  color: #1e1e1e;
+  background-color: #ffffff;
+}
+.contact-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: solid #1e1e1e;
+  border-width: 3px 3px 0 0;
+  transform: translateY(-50%) rotate(45deg);
 }/*# sourceMappingURL=style.css.map */
