@@ -12,6 +12,7 @@
         letter-spacing: f.typography(title-letter-spacing);
         line-height: f.typography(title-line-height);
         margin-bottom: f.layout(main-title-margin-bottom);
+        overflow-wrap: anywhere;
     }
 
     // サブタイトル
@@ -19,6 +20,7 @@
         position: relative;
         margin-left: 12.5px;
         font-size: f.typography(font-size-subtitle);
+        padding-bottom: f.layout(title-padding);
 
         // borderline
         @include m.title-borderline;
@@ -30,7 +32,13 @@
     position: relative;
     font-size: f.typography(font-size-section-heading);
     margin-bottom: f.layout(section-title-margin-bottom);
-    padding-bottom: f.layout(title-padding);
 
-    @include m.title-borderline;
+    @include m.title-borderline {
+        &::after {
+            bottom: f.layout(borderline-adjust-y);
+        }
+        &::before {
+            bottom: calc(-1 * (f.layout(borderline-space) - f.layout(borderline-adjust-y)));
+        }
+    }
 }
