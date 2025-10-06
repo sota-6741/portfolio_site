@@ -32,8 +32,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .base-content, .works, .insert-photo, .about-me, .main-visual {
   max-width: 1100px;
-  margin: 0 auto;
+  width: min(100%, 1100px);
+  margin-inline: auto;
   margin-bottom: 180px;
+  padding-inline: clamp(20px, 5vw, 130px);
 }
 
 .main-visual {
@@ -65,13 +67,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.45rem;
   line-height: 1;
   margin-bottom: 45px;
+  overflow-wrap: anywhere;
 }
 .c-title__sub {
   position: relative;
   margin-left: 12.5px;
   font-size: 1.5rem;
-  position: relative;
   padding-bottom: 20px;
+  position: relative;
 }
 .c-title__sub::after {
   content: "";
@@ -95,10 +98,8 @@ h1, h2, h3, h4, h5, h6 {
 .c-section-title {
   position: relative;
   font-size: 6rem;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
+  margin-bottom: 57px;
   position: relative;
-  padding-bottom: 20px;
 }
 .c-section-title::after {
   content: "";
@@ -118,6 +119,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   background: #1E1E1E;
 }
+.c-section-title::after {
+  bottom: 10px;
+}
+.c-section-title::before {
+  bottom: -6px;
+}
 
 .card .swiper {
   overflow: visible;
@@ -126,12 +133,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 .card .swiper-slide {
-  width: 816px;
+  width: min(100%, 816px);
   max-width: 816px;
 }
 @media screen and (max-width: 600px) {
   .card .swiper-slide {
-    width: 464px;
+    width: min(100%, 464px);
     max-width: 464px;
   }
 }
