@@ -18,7 +18,7 @@
         width: f.layout(swiper-slide-width);
         max-width: f.layout(swiper-slide-width);
 
-        @include m.respond(swiper-sp) {
+        @include m.break-point(swiper-sp) {
             width: f.layout(swiper-slide-width-sp);
             max-width: f.layout(swiper-slide-width-sp);
         }
@@ -29,9 +29,9 @@
         position: absolute;
         z-index: 1;
         top: calc($slide-aspect-ratio / 2);
-        transform: translateY(-100%);
+        transform: translateY(-50%);
 
-        @include m.respond(swiper-sp) {
+        @include m.break-point(swiper-sp) {
             top: 50%;
         }
     }
@@ -39,7 +39,7 @@
     .swiper-button-prev {
         left: f.swiper-button-position(default, left);
 
-        @include m.respond(swiper-sp) {
+        @include m.break-point(swiper-sp) {
             left: f.swiper-button-position(sp, left);
             right: auto;
         }
@@ -48,7 +48,7 @@
     .swiper-button-next {
         right: f.swiper-button-position(default, right);
 
-        @include m.respond(swiper-sp) {
+        @include m.break-point(swiper-sp) {
             right: f.swiper-button-position(sp, right);
             left: auto;
         }
@@ -63,7 +63,7 @@
         flex-direction: column;
         padding: 3.2rem 0;
 
-        @include m.respond(swiper-sp) {
+        @include m.break-point(swiper-sp) {
             padding: 1.5rem 0;
         }
 
@@ -71,7 +71,7 @@
             font-size: f.typography(font-size-swiper-text);
             line-height: f.typography(line-height-base);
 
-            @include m.respond(swiper-sp) {
+            @include m.break-point(swiper-sp) {
                 margin-bottom: 7rem;
             }
         }
@@ -110,7 +110,7 @@
         cursor: pointer;
         transition: f.animation(transition);
 
-        @include m.respond(swiper-sp) {
+        @include m.break-point(swiper-sp) {
             width: f.swiper-button-size(sp, width);
             height: f.swiper-button-size(sp, height);
             opacity: 0.9;
