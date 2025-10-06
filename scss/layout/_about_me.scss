@@ -1,0 +1,11 @@
+@use "../abstracts/fanctions" as f;
+@use "./base_content" as *;
+
+.about-me {
+    @extend .base-content;
+
+    p {
+        font-size: f.typography(font-size-text-ssm);
+        line-height: f.typography(line-height-base);
+    }
+}

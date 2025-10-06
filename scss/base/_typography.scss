@@ -1,0 +1,16 @@
+@use "../abstracts/fanctions" as f;
+@use "../abstracts/mixins" as m;
+
+body {
+    font-family: f.typography(family-base);
+    color: f.color(color-font-base);
+    font-size: f.typography(font-size-text-base);
+    line-height: f.typography(line-height-base);
+
+    @include m.break-point("sp") {
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: f.typography(family-base);
+}

@@ -1,0 +1,12 @@
+@use "../abstracts/fanctions" as f;
+@use "./base_content" as *;
+
+.main-visual {
+    @extend .base-content;
+    display: flex;
+    justify-content: center;
+
+    .title-group {
+        margin: f.layout(title-vartical-margin);
+    }
+}

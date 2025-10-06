@@ -1,0 +1,11 @@
+@use "./base_content" as *;
+
+.insert-photo {
+    @extend .base-content;
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}

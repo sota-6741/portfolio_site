@@ -1,0 +1,8 @@
+@use "../abstracts/fanctions" as f;
+
+.base-content {
+    max-width: f.layout(content-width);
+    margin: 0 auto;
+    margin-bottom: f.layout(content-margin-bottom-small);
+    // padding: 0 5vw;
+}

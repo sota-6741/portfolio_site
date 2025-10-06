@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "sass:math";
+@use "./variables" as *;
+
+/* アクセッサ関数 */
+@function color($name) {
+    @return map.get($tokens-color, $name);
+}
+
+@function opacity($name) {
+    @return map.get($tokens-opacity, $name);
+}
+
+@function animation($name) {
+    @return map.get($tokens-animation, $name);
+}
+
+@function shadow($name) {
+    @return map.get($tokens-shadow, $name);
+}
+
+@function typography($name) {
+    @return map.get($tokens-typography, $name);
+}
+
+@function layout($name) {
+    @return map.get($tokens-layout, $name);
+}
+
+/* pxをvwに変換する関数 */
+@function px-to-vw($px, $base: layout(base-width)) {
+    @return math.div($px, $base) * 100vw;
+}
+
+/* Swiper button position function */
+@function swiper-button-position($device: default, $side) {
+    @return map.get(map.get(layout(swiper-button-positions), $device), $side);
+}
+
+/* Swiper button size function */
+@function swiper-button-size($device: default, $property) {
+     @return map.get(map.get(layout(swiper-button-sizes), $device), $property);
+}

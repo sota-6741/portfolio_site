@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "./fanctions" as f;
+@use "./variables" as *;
+
+@mixin title-borderline {
+    position: relative;
+    padding-bottom: f.layout(title-padding); // タイトルテキストと長い線の間
+
+    // 1本目の線（長い線）- パディングの下
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: f.layout(longline-width);
+        height: f.layout(borderline-height);
+        background: f.color(color-borderline);
+    }
+
+    // 2本目の線（短い線）- 長い線からborderline-space分下
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: calc(-1 * (f.layout(borderline-space) + f.layout(borderline-height)));
+        left: 0;
+        width: f.layout(shortline-width);
+        height: f.layout(borderline-height);
+        background: f.color(color-borderline);
+    }
+}
+
+/* メディアクエリ */
+@mixin break-point($key) {
+    @media #{map.get($tokens-breakpoint, $key)} {
+        @content;
+    }
+}
+
+@mixin respond($breakpoint) {
+    @media (max-width: map.get($tokens-breakpoint, $breakpoint)) {
+        @content;
+    }
+}

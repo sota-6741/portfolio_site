@@ -1,0 +1,5 @@
+@use "./base_content" as *;
+
+.works {
+    @extend .base-content;
+}

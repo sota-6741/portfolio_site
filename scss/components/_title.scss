@@ -1,0 +1,36 @@
+@use "../abstracts/fanctions" as f;
+@use "../abstracts/mixins" as m;
+
+// 作成中
+.c-title {
+    position: relative;
+    padding-bottom: f.layout(title-padding);
+
+    // メインタイトル
+    &__main {
+        font-size: f.typography(font-size-hero);
+        letter-spacing: f.typography(title-letter-spacing);
+        line-height: f.typography(title-line-height);
+        margin-bottom: f.layout(main-title-margin-bottom);
+    }
+
+    // サブタイトル
+    &__sub {
+        position: relative;
+        margin-left: 12.5px;
+        font-size: f.typography(font-size-subtitle);
+
+        // borderline
+        @include m.title-borderline;
+
+    }
+}
+
+.c-section-title {
+    position: relative;
+    font-size: f.typography(font-size-section-heading);
+    margin-bottom: f.layout(section-title-margin-bottom);
+    padding-bottom: f.layout(title-padding);
+
+    @include m.title-borderline;
+}

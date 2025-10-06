@@ -1,0 +1,147 @@
+@use "../abstracts/fanctions" as f;
+@use "../abstracts/mixins" as m;
+@use "sass:math";
+
+.card {
+    // Swiper styles are nested here
+    $slide-aspect-ratio: math.div(f.layout(swiper-slide-media-height), f.layout(swiper-slide-width)) * 100%;
+
+    .swiper {
+        overflow: visible;
+    }
+
+    .swiper-area {
+        position: relative;
+    }
+
+    .swiper-slide {
+        width: f.layout(swiper-slide-width);
+        max-width: f.layout(swiper-slide-width);
+
+        @include m.respond(swiper-sp) {
+            width: f.layout(swiper-slide-width-sp);
+            max-width: f.layout(swiper-slide-width-sp);
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: absolute;
+        z-index: 1;
+        top: calc($slide-aspect-ratio / 2);
+        transform: translateY(-100%);
+
+        @include m.respond(swiper-sp) {
+            top: 50%;
+        }
+    }
+
+    .swiper-button-prev {
+        left: f.swiper-button-position(default, left);
+
+        @include m.respond(swiper-sp) {
+            left: f.swiper-button-position(sp, left);
+            right: auto;
+        }
+    }
+
+    .swiper-button-next {
+        right: f.swiper-button-position(default, right);
+
+        @include m.respond(swiper-sp) {
+            right: f.swiper-button-position(sp, right);
+            left: auto;
+        }
+    }
+
+    .slide-media {
+        padding-top: $slide-aspect-ratio;
+        border-radius: f.layout(radius-base);
+    }
+    .slide-content {
+        display: flex;
+        flex-direction: column;
+        padding: 3.2rem 0;
+
+        @include m.respond(swiper-sp) {
+            padding: 1.5rem 0;
+        }
+
+        .slide-text {
+            font-size: f.typography(font-size-swiper-text);
+            line-height: f.typography(line-height-base);
+
+            @include m.respond(swiper-sp) {
+                margin-bottom: 7rem;
+            }
+        }
+        .slide-link {
+            font-size: f.typography(font-size-swiper-text);
+            align-self: flex-end;
+            margin-top: auto;
+        }
+    }
+
+    [class*=swiper]:focus {
+        outline: none;
+    }
+
+    .slide-media,
+    .thumb-media {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: grid;
+        place-content: center;
+        width: f.swiper-button-size(default, width);
+        height: f.swiper-button-size(default, height);
+        cursor: pointer;
+        transition: f.animation(transition);
+
+        @include m.respond(swiper-sp) {
+            width: f.swiper-button-size(sp, width);
+            height: f.swiper-button-size(sp, height);
+            opacity: 0.9;
+        }
+        &::before {
+            position: absolute;
+            background-color: f.color(swiper-slide-button);
+            inset: 0;
+            content: "";
+            border-radius: 50%;
+        }
+        &::after {
+            width: 1.2rem;
+            height: 1.2rem;
+            content: "";
+            border: solid f.color(swiper-gray);
+            border-width: 3px 3px 0 0;
+        }
+    }
+
+    .swiper-button-prev::after {
+        margin-left: 0.4rem;
+        transform: rotate(-135deg);
+    }
+    .swiper-button-next::after {
+        margin-right: 0.4rem;
+        transform: rotate(45deg);
+    }
+    .swiper-button-disabled {
+        pointer-events: none;
+        opacity: f.opacity(button-disable);
+        cursor: default;
+    }
+}

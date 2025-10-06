@@ -1,0 +1,111 @@
+/* color tokens */
+$tokens-color: (
+    color-base: #ffffff,
+    color-font-base: #1e1e1e,
+    color-footer: #272727,
+    color-button-base: #939393,
+    color-button-outline: #ffffff,
+    color-borderline: #1E1E1E,
+    // swiper colors
+    swiper-bg: #f8f8f8,
+    swiper-white: #fff,
+    swiper-gray: #dddddd,
+    swiper-slide-button: #939393,
+    swiper-theme: #f5695f
+) !default;
+
+/* opacity tokens */
+$tokens-opacity: (
+    button-disable: 0.3,
+) !default;
+
+/* animation tokens */
+$tokens-animation: (
+    easing: cubic-bezier(.2, 1, .2, 1),
+    transition: .8s cubic-bezier(.2, 1, .2, 1)
+) !default;
+
+/* typography tokens */
+$tokens-typography: (
+    /* font family */
+    family-base: ("dnp-shuei-gothic-kin-std", sans-serif),
+    /* font size */
+    // 18px
+    font-size-text-ssm: 1.125rem,
+    // 20px
+    font-size-text-lg: 1.25rem,
+    // 48px
+    font-size-text-base: 3rem,
+    // 38px
+    font-size-text-sm: 2.375rem,
+    // 128px
+    font-size-hero: 8rem,
+    // 24px
+    font-size-subtitle: 1.5rem,
+    // 96px
+    font-size-section-heading: 6rem,
+    /* letter spacing */
+    /* title */
+    title-letter-spacing: 0.45rem,
+    /* swiper */
+    // 15px
+    font-size-swiper-text: 0.938rem,
+    /* line height */
+    line-height-base: 1.6,
+    line-height-tight: 1.3,
+    title-line-height: 1,
+) !default;
+
+/* layout tokens */
+$tokens-layout: (
+    base-width: 1366px,
+    radius-base: 20px,
+    /* content */
+    content-width: 1100px,
+    content-width-sp: 320px,
+    content-margin-bottom-large: 200px,
+    content-margin-bottom-small: 180px,
+    content-padding-horizontal: 130px,
+    content-padding-horizontal-sp: 20px,
+    /* title */
+    title-vartical-margin: 30.5vh,
+    title-padding: 20px,
+    main-title-margin-bottom: 45px,
+    /* section title */
+    section-title-margin-bottom: 40px,
+    /* borderline */
+    borderline-space: 16px,
+    borderline-height: 2px,
+    longline-width: 106px,
+    shortline-width: 61px,
+    /* swiper layout */
+    swiper-slide-width: 816px,
+    swiper-slide-width-sp: 464px,
+    swiper-slide-media-height: 480px,
+    swiper-button-positions: (
+        default: (
+            left: -43.2px,
+            right: -43.2px
+        ),
+        sp: (
+            left: -19.2px,
+            right: -25.6px
+        )
+    ),
+    swiper-button-sizes: (
+        default: (
+            width: 3.563rem,
+            height: 3.563rem
+        ),
+        sp: (
+            width: 49.6px,
+            height: 49.6px
+        )
+    )
+) !default;
+
+$tokens-breakpoint: (
+    sp: "screen and (max-width: 420px)",
+    swiper-sp: "screen and (max-width: 600px)"
+) !default;
+
