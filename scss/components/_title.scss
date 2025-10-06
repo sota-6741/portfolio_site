@@ -23,7 +23,7 @@
         padding-bottom: f.layout(title-padding);
 
         // borderline
-        @include m.title-borderline;
+        @include m.title-borderline(f.color(color-borderline));
 
     }
 }
@@ -33,7 +33,7 @@
     font-size: f.typography(font-size-section-heading);
     margin-bottom: f.layout(section-title-margin-bottom);
 
-    @include m.title-borderline {
+    @include m.title-borderline(f.color(color-borderline)) {
         &::after {
             bottom: f.layout(borderline-adjust-y);
         }
