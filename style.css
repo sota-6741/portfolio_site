@@ -39,9 +39,10 @@ h1, h2, h3, h4, h5, h6 {
 .main-visual {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .main-visual .title-group {
-  margin: 30.5vh;
+  margin: 30.5vh auto;
 }
 
 .about-me p {
@@ -128,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 816px;
   max-width: 816px;
 }
-@media (max-width: screen and (max-width: 600px)) {
+@media screen and (max-width: 600px) {
   .card .swiper-slide {
     width: 464px;
     max-width: 464px;
@@ -139,27 +140,27 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   z-index: 1;
   top: 29.4117647059%;
-  transform: translateY(-100%);
+  transform: translateY(-50%);
 }
-@media (max-width: screen and (max-width: 600px)) {
+@media screen and (max-width: 600px) {
   .card .swiper-button-prev,
   .card .swiper-button-next {
     top: 50%;
   }
 }
 .card .swiper-button-prev {
-  left: -43.2px;
+  left: -25px;
 }
-@media (max-width: screen and (max-width: 600px)) {
+@media screen and (max-width: 600px) {
   .card .swiper-button-prev {
     left: -19.2px;
     right: auto;
   }
 }
 .card .swiper-button-next {
-  right: -43.2px;
+  right: -65px;
 }
-@media (max-width: screen and (max-width: 600px)) {
+@media screen and (max-width: 600px) {
   .card .swiper-button-next {
     right: -25.6px;
     left: auto;
@@ -174,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   padding: 3.2rem 0;
 }
-@media (max-width: screen and (max-width: 600px)) {
+@media screen and (max-width: 600px) {
   .card .slide-content {
     padding: 1.5rem 0;
   }
@@ -183,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.938rem;
   line-height: 1.6;
 }
-@media (max-width: screen and (max-width: 600px)) {
+@media screen and (max-width: 600px) {
   .card .slide-content .slide-text {
     margin-bottom: 7rem;
   }
@@ -220,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   transition: 0.8s cubic-bezier(0.2, 1, 0.2, 1);
 }
-@media (max-width: screen and (max-width: 600px)) {
+@media screen and (max-width: 600px) {
   .card .swiper-button-prev,
   .card .swiper-button-next {
     width: 49.6px;
