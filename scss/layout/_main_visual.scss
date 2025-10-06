@@ -5,8 +5,9 @@
     @extend .base-content;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     .title-group {
-        margin: f.layout(title-vartical-margin);
+        margin: f.layout(title-vartical-margin) auto;
     }
 }
