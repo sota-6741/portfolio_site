@@ -2,7 +2,7 @@
 @use "./fanctions" as f;
 @use "./variables" as *;
 
-@mixin title-borderline {
+@mixin title-borderline($line-color: color-borderline) {
     position: relative;
 
     // 1本目の線（長い線）- パディングの下
@@ -13,7 +13,7 @@
         left: 0;
         width: f.layout(longline-width);
         height: f.layout(borderline-height);
-        background: f.color(color-borderline);
+        background: $line-color;
     }
 
     // 2本目の線（短い線）- 長い線からborderline-space分下
@@ -24,10 +24,41 @@
         left: 0;
         width: f.layout(shortline-width);
         height: f.layout(borderline-height);
-        background: f.color(color-borderline);
+        background: $line-color;
     }
 
     @content;
+}
+
+@mixin button($string-color: f.color(color-font-base), $background-color: f.color(color-base)) {
+    position: relative;
+    padding: 0.75rem 9.625rem;
+    font-size: f.typography(font-size-text-lg);
+    border-radius: f.layout(radius-base);
+
+    color: $string-color;
+    background-color: $background-color;
+
+    @content;
+}
+
+@mixin arrow-icon(
+    $pseudo: after,
+    $angle: 45deg,
+    $stroke: 3px,
+    $length: 1.2rem,
+    $offset-x: 0,
+    $color: f.color(swiper-gray)
+) {
+    &::#{$pseudo} {
+        content: "";
+        display: block;
+        width: $length;
+        height: $length;
+        border: solid $color;
+        border-width: $stroke $stroke 0 0;
+        transform: translateX($offset-x) rotate($angle);
+    }
 }
 
 /* メディアクエリ */
