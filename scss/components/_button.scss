@@ -1,0 +1,20 @@
+@use "../abstracts/fanctions" as f;
+@use "../abstracts/mixins" as m;
+
+.contact-button {
+    @include m.button() {
+        // 右端に矢印アイコンを配置
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 1.875rem;
+            display: block;
+            width: 1.2rem;
+            height: 1.2rem;
+            border: solid $string-color;
+            border-width: 3px 3px 0 0;
+            transform: translateY(-50%) rotate(45deg);
+        }
+    }
+}
