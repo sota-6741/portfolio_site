@@ -1,5 +1,7 @@
+@use "../abstracts/fanctions" as f;
 @use "./base_content" as *;
 
 .works {
     @extend .base-content;
+    margin-bottom: f.layout(content-margin-bottom-large);
 }
