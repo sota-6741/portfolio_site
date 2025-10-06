@@ -2,7 +2,12 @@
 
 .base-content {
     max-width: f.layout(content-width);
-    margin: 0 auto;
+    width: min(100%, f.layout(content-width));
+    margin-inline: auto;
     margin-bottom: f.layout(content-margin-bottom-small);
-    // padding: 0 5vw;
+    padding-inline: clamp(
+        f.layout(content-padding-horizontal-sp),
+        5vw,
+        f.layout(content-padding-horizontal)
+    );
 }
