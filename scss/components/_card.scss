@@ -15,11 +15,11 @@
     }
 
     .swiper-slide {
-        width: f.layout(swiper-slide-width);
+        width: min(100%, f.layout(swiper-slide-width));
         max-width: f.layout(swiper-slide-width);
 
         @include m.break-point(swiper-sp) {
-            width: f.layout(swiper-slide-width-sp);
+            width: min(100%, f.layout(swiper-slide-width-sp));
             max-width: f.layout(swiper-slide-width-sp);
         }
     }
