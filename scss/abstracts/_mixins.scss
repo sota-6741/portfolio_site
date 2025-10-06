@@ -4,7 +4,6 @@
 
 @mixin title-borderline {
     position: relative;
-    padding-bottom: f.layout(title-padding); // タイトルテキストと長い線の間
 
     // 1本目の線（長い線）- パディングの下
     &::after {
@@ -27,6 +26,8 @@
         height: f.layout(borderline-height);
         background: f.color(color-borderline);
     }
+
+    @content;
 }
 
 /* メディアクエリ */
