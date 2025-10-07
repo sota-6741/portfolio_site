@@ -3,7 +3,6 @@
 @use "./base_content" as *;
 
 .contact {
-    // @extend .base-content;
     background-color: f.color(color-footer);
     color: f.color(color-base);
     margin-inline: auto;
@@ -12,24 +11,38 @@
     border-radius: f.layout(radius-base) f.layout(radius-base) 0 0;
 
     .contact-contents {
+        @extend .base-content;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        padding-inline: 1.875rem;
 
         .c-section-title {
             @include m.title-borderline(f.color(color-base));
         }
 
-        .contact-forms {
+        .contact-form {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-            p {
-                font-size: 0.938rem;
-            }
+        .contact-form-text {
+            font-size: 0.938rem;
+            margin-bottom: 0.813rem;
+        }
+
+        .contact-button {
+            margin-bottom: 40px;
+        }
+
+        .contact-icons {
+            // 未実装
+        }
+        }
+        .copy-right {
+            font-size: f.typography(font-size-copy-right);
         }
     }
 }
