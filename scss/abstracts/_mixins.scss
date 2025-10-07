@@ -2,7 +2,7 @@
 @use "./fanctions" as f;
 @use "./variables" as *;
 
-@mixin title-borderline($line-color: color-borderline) {
+@mixin title-borderline($line-color: f.color(color-borderline)) {
     position: relative;
 
     // 1本目の線（長い線）- パディングの下
@@ -20,7 +20,7 @@
     &::before {
         content: "";
         position: absolute;
-        bottom: calc(-1 * (f.layout(borderline-space) + f.layout(borderline-height)));
+        bottom: calc(-1 * (f.layout(borderline-space) + f.layout(borderline-height) * 2));
         left: 0;
         width: f.layout(shortline-width);
         height: f.layout(borderline-height);
