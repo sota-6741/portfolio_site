@@ -1,13 +1,14 @@
 @use "../abstracts/fanctions" as f;
 
 .base-content {
-    max-width: f.layout(content-width);
-    width: min(100%, f.layout(content-width));
+    container-type: inline-size;
+
+    max-inline-size: f.layout(content-width);
+    inline-size: min(calc(100% - 2 * f.layout(content-padding-horizontal)), f.layout(content-width));
     margin-inline: auto;
-    margin-bottom: f.layout(content-margin-bottom-small);
-    padding-inline: clamp(
-        f.layout(content-padding-horizontal-sp),
-        5vw,
-        f.layout(content-padding-horizontal)
-    );
+    margin-block-end: f.layout(content-margin-bottom-small);
+
+    @container (min-width: 600px) {
+        margin-block-end: f.layout(content-margin-bottom-large);
+    }
 }
