@@ -32,12 +32,22 @@
     @return math.div($px, $base) * 100vw;
 }
 
-/* Swiper button position function */
+/* pcとspのビューポート間を線型的にサイズ変化させる関数 (要検討) */
+@function fluid-clamp($min-size, $max-size, $min-vw: layout(sp-width), $max-vw: layout(base-width)) {
+  @return clamp(
+    #{$min-size},
+    calc(#{$min-size} + (#{$max-size} - #{$min-size}) *
+      ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))),
+    #{$max-size}
+  );
+}
+
+/* Swiperボタンの位置 */
 @function swiper-button-position($device: default, $side) {
     @return map.get(map.get(layout(swiper-button-positions), $device), $side);
 }
 
-/* Swiper button size function */
+/* Swiperボタンのサイズ */
 @function swiper-button-size($device: default, $property) {
      @return map.get(map.get(layout(swiper-button-sizes), $device), $property);
 }
