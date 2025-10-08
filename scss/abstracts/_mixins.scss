@@ -85,9 +85,3 @@
         @content;
     }
 }
-
-@mixin respond($breakpoint) {
-    @media (max-width: map.get($tokens-breakpoint, $breakpoint)) {
-        @content;
-    }
-}
