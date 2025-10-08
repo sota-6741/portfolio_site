@@ -79,6 +79,8 @@
             font-size: f.typography(font-size-swiper-text);
             align-self: flex-end;
             margin-top: auto;
+            position: relative;
+            @include m.arrow-borderline;
         }
     }
 
