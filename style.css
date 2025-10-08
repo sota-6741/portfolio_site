@@ -287,6 +287,21 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.938rem;
   align-self: flex-end;
   margin-top: auto;
+  position: relative;
+  position: relative;
+}
+.card .slide-content .slide-link::after {
+  content: "";
+  position: absolute;
+  width: 115%;
+  height: 10px;
+  border-bottom: 1px solid #1e1e1e;
+  border-right: 1px solid #1e1e1e;
+  /* 傾きを調節 */
+  transform: skew(60deg);
+  /* 下線矢印野市補正 */
+  left: -5px;
+  bottom: -2px;
 }
 .card [class*=swiper]:focus {
   outline: none;
