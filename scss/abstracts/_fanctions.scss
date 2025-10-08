@@ -36,8 +36,10 @@
 @function fluid-clamp($min-size, $max-size, $min-vw: layout(sp-width), $max-vw: layout(base-width)) {
   @return clamp(
     #{$min-size},
-    calc(#{$min-size} + (#{$max-size} - #{$min-size}) *
-      ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))),
+    calc(
+      #{$min-size} + (#{$max-size} - #{$min-size}) *
+      ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))
+    ),
     #{$max-size}
   );
 }
