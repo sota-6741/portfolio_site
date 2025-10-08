@@ -26,6 +26,7 @@ body {
   color: #1e1e1e;
   font-size: 3rem;
   line-height: 1.6;
+  text-align: justify;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "dnp-shuei-gothic-kin-std", sans-serif;
@@ -371,6 +372,8 @@ h1, h2, h3, h4, h5, h6 {
 .card .swiper-button-disabled {
   pointer-events: none;
   opacity: 0.3;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
   cursor: default;
 }
 
