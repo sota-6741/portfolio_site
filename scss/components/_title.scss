@@ -8,18 +8,24 @@
 
     // メインタイトル
     &__main {
-        font-size: f.typography(font-size-hero);
+        font-size: f.fluid-clamp(f.typography(font-size-hero-sp), f.typography(font-size-hero));
         letter-spacing: f.typography(title-letter-spacing);
         line-height: f.typography(title-line-height);
         margin-bottom: f.layout(main-title-margin-bottom);
-        overflow-wrap: anywhere;
+
+        /* spanを立てに並べる */
+        display: flex;
+        flex-direction: column;
+        .line-break {
+            display: inline-block
+        }
     }
 
     // サブタイトル
     &__sub {
         position: relative;
         margin-left: 12.5px;
-        font-size: f.typography(font-size-subtitle);
+        font-size: f.fluid-clamp(f.typography(font-size-sub-title-sp), f.typography(font-size-sub-title));
         padding-bottom: f.layout(title-padding);
 
         // borderline
@@ -30,7 +36,7 @@
 
 .c-section-title {
     position: relative;
-    font-size: f.typography(font-size-section-heading);
+    font-size: f.fluid-clamp(f.typography(font-size-section-title-sp), f.typography(font-size-section-title));
     margin-bottom: f.layout(section-title-margin-bottom);
 
     @include m.title-borderline(f.color(color-borderline)) {
