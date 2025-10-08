@@ -30,6 +30,24 @@
     @content;
 }
 
+@mixin arrow-borderline {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 115%;
+        height: 10px;
+        border-bottom: 1px solid f.color(color-font-base);
+        border-right: 1px solid f.color(color-font-base);
+        /* 傾きを調節 */
+        transform: skew(60deg);
+        /* 下線矢印野市補正 */
+        left: -5px;
+        bottom: -2px;
+    }
+}
+
 @mixin button($string-color: f.color(color-font-base), $background-color: f.color(color-base)) {
     position: relative;
     padding: 0.75rem 9.625rem;
