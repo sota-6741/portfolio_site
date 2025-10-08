@@ -4,7 +4,10 @@
     container-type: inline-size;
 
     max-inline-size: f.layout(content-width);
-    inline-size: min(calc(100% - 2 * f.layout(content-padding-horizontal)), f.layout(content-width));
+    inline-size: f.fluid-clamp(
+        f.layout(content-width-sp),
+        f.layout(content-width)
+    );
     margin-inline: auto;
     margin-block-end: f.layout(content-margin-bottom-small);
 
