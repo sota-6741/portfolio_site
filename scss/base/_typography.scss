@@ -6,6 +6,7 @@ body {
     color: f.color(color-font-base);
     font-size: f.typography(font-size-text-base);
     line-height: f.typography(line-height-base);
+    text-align: justify;
 
     @include m.break-point("sp") {
     }
