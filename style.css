@@ -306,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
   border-right: 1px solid #1e1e1e;
   /* 傾きを調節 */
   transform: skew(60deg);
-  /* 下線矢印野市補正 */
+  /* 下線矢印の位置補正 */
   left: -5px;
   bottom: -2px;
 }
