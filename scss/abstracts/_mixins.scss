@@ -5,22 +5,22 @@
 @mixin title-borderline($line-color: f.color(color-borderline)) {
     position: relative;
 
-    // 1本目の線（長い線）- パディングの下
+    // 1本目の線（長い線）- 調整値分下に配置
     &::after {
         content: "";
         position: absolute;
-        bottom: 0;
+        bottom: calc(-1 * f.layout(borderline-adjust-y));
         left: 0;
         width: f.layout(longline-width);
         height: f.layout(borderline-height);
         background: $line-color;
     }
 
-    // 2本目の線（短い線）- 長い線からborderline-space分下
+    // 2本目の線（短い線）- 長い線からspace分さらに下
     &::before {
         content: "";
         position: absolute;
-        bottom: calc(-1 * (f.layout(borderline-space) + f.layout(borderline-height) * 2));
+        bottom: calc(-1 * (f.layout(borderline-adjust-y) + f.layout(borderline-space) + f.layout(borderline-height)));
         left: 0;
         width: f.layout(shortline-width);
         height: f.layout(borderline-height);
