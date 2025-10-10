@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact .contact-contents .c-section-title::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   width: 106px;
   height: 2px;
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact .contact-contents .c-section-title::before {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: -28px;
   left: 0;
   width: 61px;
   height: 2px;
@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
 .c-title__sub::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   width: 106px;
   height: 2px;
@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
 .c-title__sub::before {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: -28px;
   left: 0;
   width: 61px;
   height: 2px;
@@ -198,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
 .c-section-title::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   width: 106px;
   height: 2px;
@@ -207,7 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 .c-section-title::before {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: -28px;
   left: 0;
   width: 61px;
   height: 2px;
@@ -335,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 3.563rem;
   height: 3.563rem;
   cursor: pointer;
-  transition: 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: opacity 0.8s cubic-bezier(0.2, 1, 0.2, 1), transform 0.8s cubic-bezier(0.2, 1, 0.2, 1), background-color 0.8s cubic-bezier(0.2, 1, 0.2, 1);
 }
 @media screen and (max-width: 600px) {
   .card .swiper-button-prev,
@@ -361,6 +361,15 @@ h1, h2, h3, h4, h5, h6 {
   border: solid #dddddd;
   border-width: 3px 3px 0 0;
 }
+.card .swiper-button-prev.swiper-button-disabled,
+.card .swiper-button-next.swiper-button-disabled {
+  transition: opacity 0.8s cubic-bezier(0.2, 1, 0.2, 1), transform 0.8s cubic-bezier(0.2, 1, 0.2, 1), background-color 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+  pointer-events: none;
+  opacity: 0.3;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  cursor: default;
+}
 .card .swiper-button-prev::after {
   margin-left: 0.4rem;
   transform: rotate(-135deg);
@@ -369,7 +378,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0.4rem;
   transform: rotate(45deg);
 }
-.card .swiper-button-disabled {
+.card .swiper-button-prev.swiper-button-disabled,
+.card .swiper-button-next.swiper-button-disabled {
+  transition: none;
   pointer-events: none;
   opacity: 0.3;
   border: 1px solid #ffffff;
