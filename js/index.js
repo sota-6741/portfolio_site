@@ -14,4 +14,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
     });
+
+    // 画面幅に応じてボタンの表示/非表示を制御
+    function toggleNavigationButtons() {
+        const buttons = document.querySelectorAll('.swiper-button-prev, .swiper-button-next');
+        if (window.innerWidth <= 600) {
+            buttons.forEach(button => button.style.display = 'none');
+        } else {
+            buttons.forEach(button => button.style.display = 'grid');
+        }
+    }
+
+    // 初期実行
+    toggleNavigationButtons();
+
+    // リサイズ時にも実行
+    window.addEventListener('resize', toggleNavigationButtons);
 });
