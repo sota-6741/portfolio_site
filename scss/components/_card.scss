@@ -110,13 +110,20 @@
         width: f.swiper-button-size(default, width);
         height: f.swiper-button-size(default, height);
         cursor: pointer;
-        transition: f.animation(transition);
+
+        // 枠線以外にアニメーションを適応
+        transition:
+            opacity f.animation(transition),
+            transform f.animation(transition),
+            background-color f.animation(transition);
+
 
         @include m.break-point(swiper-sp) {
             width: f.swiper-button-size(sp, width);
             height: f.swiper-button-size(sp, height);
             opacity: 0.9;
         }
+
         &::before {
             position: absolute;
             background-color: f.color(swiper-slide-button);
@@ -124,6 +131,7 @@
             content: "";
             border-radius: 50%;
         }
+
         &::after {
             width: 1.2rem;
             height: 1.2rem;
@@ -131,17 +139,34 @@
             border: solid f.color(swiper-gray);
             border-width: 3px 3px 0 0;
         }
+
+        &.swiper-button-disabled {
+            transition:
+                opacity f.animation(transition),
+                transform f.animation(transition),
+                background-color f.animation(transition);
+            pointer-events: none;
+            opacity: f.opacity(button-disable);
+            border: 1px solid f.color(color-button-outline);
+            border-radius: 50%;
+            cursor: default;
+        }
     }
 
     .swiper-button-prev::after {
         margin-left: 0.4rem;
         transform: rotate(-135deg);
     }
+
     .swiper-button-next::after {
         margin-right: 0.4rem;
         transform: rotate(45deg);
     }
-    .swiper-button-disabled {
+
+    // 無効状態の詳細なスタイル（詳細度を上げて確実に適用）
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled {
+        transition: none;
         pointer-events: none;
         opacity: f.opacity(button-disable);
         border: 1px solid f.color(color-button-outline);
