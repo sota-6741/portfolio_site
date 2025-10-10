@@ -86,7 +86,7 @@ $tokens-layout: (
     title-vartical-margin: 30.5vh,
     title-padding: 20px,
     main-title-margin-bottom: 45px,
-    /* section title */
+    // section title
     section-title-margin-bottom: 57px,
     /* borderline */
     borderline-space: 16px,
@@ -118,6 +118,8 @@ $tokens-layout: (
             height: 49.6px
         )
     )
+    /* Contact */
+    
 ) !default;
 
 $tokens-breakpoint: (
