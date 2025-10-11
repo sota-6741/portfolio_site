@@ -24,9 +24,9 @@
     // サブタイトル
     &__sub {
         position: relative;
-        margin-left: 12.5px;
+        margin-left: f.fluid-clamp(f.layout(sub-title-margin-left-sp), f.layout(sub-title-margin-left));
         font-size: f.fluid-clamp(f.typography(font-size-sub-title-sp), f.typography(font-size-sub-title));
-        padding-bottom: f.layout(title-padding);
+        padding-bottom: f.layout(title-padding-bottom);
 
         // borderline
         @include m.title-borderline(f.color(color-borderline));
@@ -41,10 +41,12 @@
 
     @include m.title-borderline(f.color(color-borderline)) {
         &::after {
-            bottom: f.layout(borderline-adjust-y);
+            bottom: f.fluid-clamp(f.layout(borderline-first-bottom-sp) + f.layout(content-borderline-bottom-adjust),
+            f.layout(borderline-first-bottom) + f.layout(content-borderline-bottom-adjust));
         }
         &::before {
-            bottom: calc(-1 * (f.layout(borderline-space) - f.layout(borderline-adjust-y)));
+            bottom: f.fluid-clamp(f.layout(borderline-second-bottom-sp) + f.layout(content-borderline-bottom-adjust),
+            f.layout(borderline-second-bottom) + f.layout(content-borderline-bottom-adjust));
         }
     }
 }
