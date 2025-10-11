@@ -71,29 +71,53 @@ $tokens-layout: (
     base-width: 1366px,
     sp-width: 375px,
     radius-base: 20px,
+
+
     /* content */
     content-width: 1100px,
-    content-width-sp: 320px,
-
     content-width-ratio: calc(content-width / base-width),
-    content-width-ratio-sp: calc(content-width-sp / base-width),
-
     content-margin-bottom-large: 200px,
     content-margin-bottom-small: 180px,
     content-padding-horizontal: 130px,
+
+    // sp
+    content-width-sp: 320px,
+    content-width-ratio-sp: calc(content-width-sp / base-width),
     content-padding-horizontal-sp: 28px,
+
+
     /* title */
     title-vartical-margin: 30.5vh,
-    title-padding: 20px,
+    title-padding-bottom: 20px,
+    sub-title-margin-left: 12px,
     main-title-margin-bottom: 45px,
     // section title
     section-title-margin-bottom: 57px,
+
+    // sp
+    sub-title-margin-left-sp: 0px,
+
+
     /* borderline */
-    borderline-space: 16px,
     borderline-height: 2px,
     longline-width: 106px,
     shortline-width: 61px,
-    borderline-adjust-y: 10px,
+    borderline-first-bottom: 1px,
+    borderline-second-bottom: -15px,
+    content-borderline-bottom-adjust: 9px,
+
+    // sp
+    longline-width-sp: 55px,
+    shortline-width-sp: 32px,
+    borderline-first-bottom-sp: -9px,
+    borderline-second-bottom-sp: -19px,
+
+
+
+    /* insert photo */
+    insert-photo-height: 400px,
+
+
     /* swiper layout */
     swiper-slide-width: 816px,
     swiper-slide-width-sp: 464px,
@@ -117,13 +141,32 @@ $tokens-layout: (
             width: 49.6px,
             height: 49.6px
         )
-    )
-    /* Contact */
-    
+    ),
+    /* contact */
+    contact-padding-top: 9.375rem,
+    contact-padding-bottom: 6.25rem,
+    contact-contents-padding: 1.875rem,
+    contact-text-margin: 0.813rem,
+    contact-button-margin: 2.5rem,
+    contact-icons-gap: 0.938rem,
+    contact-icon-size: 50px,
+    contact-icon-img-size: 30px,
+    // contact-button
+    contact-button-width: 467px,
+    contact-button-height: 60px,
+
+    // sp
+    contact-padding-top-sp: 40px,
+    contact-padding-bottom-sp: 20px,
+    contact-contents-padding-sp: 0rem,
+    // contact-button
+    contact-button-width-sp: 318px,
+
 ) !default;
 
 $tokens-breakpoint: (
     sp: "screen and (max-width: 420px)",
-    swiper-sp: "screen and (max-width: 600px)"
+    swiper-sp: "screen and (max-width: 600px)",
+    contact-sp: "screen and (max-width: 950px)"
 ) !default;
 
