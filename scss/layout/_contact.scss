@@ -6,8 +6,8 @@
     background-color: f.color(color-footer);
     color: f.color(color-base);
     margin-inline: auto;
-    padding-top: 9.375rem;
-    padding-bottom: 6.25rem;
+    padding-top: f.fluid-clamp(f.layout(contact-padding-top-sp), f.layout(contact-padding-top));
+    padding-bottom: f.fluid-clamp(f.layout(contact-padding-bottom-sp), f.layout(contact-padding-bottom));
     border-radius: f.layout(radius-base) f.layout(radius-base) 0 0;
 
     .contact-contents {
@@ -16,11 +16,20 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding-inline: 1.875rem;
+        padding-inline: f.fluid-clamp(f.layout(contact-contents-padding-sp), f.layout(contact-contents-padding));
         margin-block-end: 0;
+
+        @include m.break-point("contact-sp") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
         .c-section-title {
             @include m.title-borderline(f.color(color-base));
+            @include m.break-point("contact-sp") {
+                align-self: flex-start;
+                text-align: left;
+            }
         }
 
         .contact-form {
@@ -29,13 +38,22 @@
             justify-content: center;
             align-items: center;
 
+            @include m.break-point("contact-sp") {
+                align-self: center;
+            }
+
+
             .contact-form-text {
                 font-size: 0.938rem;
-                margin-bottom: 0.813rem;
+                margin-bottom: f.layout(contact-text-margin);
             }
 
             .contact-button {
-                margin-bottom: 2.5rem;
+                @include m.button() {
+                    width: f.fluid-clamp(f.layout(contact-button-width-sp), f.layout(contact-button-width));
+                    height: f.layout(contact-button-height);
+                };
+                margin-bottom: f.layout(contact-button-margin);
             }
 
             .icons {
@@ -43,12 +61,12 @@
                 flex-direction: row;
                 align-self: flex-end;
                 align-items: center;
-                gap: 0.938rem;
-                margin-bottom: 2.5rem;
+                gap: f.layout(contact-icons-gap);
+                margin-bottom: f.layout(contact-button-margin);
 
                 .contact-icon {
-                    width: 50px;
-                    height: 50px;
+                    width: f.layout(contact-icon-size);
+                    height: f.layout(contact-icon-size);
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -56,8 +74,8 @@
                     border-radius: 50%;
 
                     img {
-                        width: 30px;
-                        height: 30px;
+                        width: f.layout(contact-icon-img-size);
+                        height: f.layout(contact-icon-img-size);
                         object-fit: contain;
                     }
                 }
