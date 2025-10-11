@@ -7,6 +7,7 @@
 /* アクセッサ関数 */
 /* pxをvwに変換する関数 */
 /* pcとspのビューポート間を線型的にサイズ変化させる関数 (要検討) */
+/* 画面幅が広→狭になるにつれて値が小→大になる逆方向の線型変化関数 */
 /* Swiperボタンの位置 */
 /* Swiperボタンのサイズ */
 /* メディアクエリ */
@@ -63,6 +64,10 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   max-width: 100%;
   height: auto;
+  min-height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
 }
 
 .works {
@@ -73,8 +78,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #272727;
   color: #ffffff;
   margin-inline: auto;
-  padding-top: 9.375rem;
-  padding-bottom: 6.25rem;
+  padding-top: clamp(40px, 40px + (9.375rem - 40px) * (100vw - 375px) / (1366px - 375px), 9.375rem);
+  padding-bottom: clamp(20px, 20px + (6.25rem - 20px) * (100vw - 375px) / (1366px - 375px), 6.25rem);
   border-radius: 20px 20px 0 0;
 }
 .contact .contact-contents {
@@ -82,8 +87,14 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 1.875rem;
+  padding-inline: clamp(0rem, 0rem + (1.875rem - 0rem) * (100vw - 375px) / (1366px - 375px), 1.875rem);
   margin-block-end: 0;
+}
+@media screen and (max-width: 950px) {
+  .contact .contact-contents {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .contact .contact-contents .c-section-title {
   position: relative;
@@ -91,20 +102,26 @@ h1, h2, h3, h4, h5, h6 {
 .contact .contact-contents .c-section-title::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: clamp(-9px, -9px + (1px - -9px) * (100vw - 375px) / (1366px - 375px), 1px);
   left: 0;
-  width: 106px;
+  width: clamp(55px, 55px + (106px - 55px) * (100vw - 375px) / (1366px - 375px), 106px);
   height: 2px;
   background: #ffffff;
 }
 .contact .contact-contents .c-section-title::before {
   content: "";
   position: absolute;
-  bottom: -28px;
+  bottom: clamp(-19px, -19px + (-15px - -19px) * (100vw - 375px) / (1366px - 375px), -15px);
   left: 0;
-  width: 61px;
+  width: clamp(32px, 32px + (61px - 32px) * (100vw - 375px) / (1366px - 375px), 61px);
   height: 2px;
   background: #ffffff;
+}
+@media screen and (max-width: 950px) {
+  .contact .contact-contents .c-section-title {
+    align-self: flex-start;
+    text-align: left;
+  }
 }
 .contact .contact-contents .contact-form {
   display: flex;
@@ -112,11 +129,26 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 950px) {
+  .contact .contact-contents .contact-form {
+    align-self: center;
+  }
+}
 .contact .contact-contents .contact-form .contact-form-text {
   font-size: 0.938rem;
   margin-bottom: 0.813rem;
 }
 .contact .contact-contents .contact-form .contact-button {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  color: #1e1e1e;
+  background-color: #ffffff;
+  width: clamp(318px, 318px + (467px - 318px) * (100vw - 375px) / (1366px - 375px), 467px);
+  height: 60px;
   margin-bottom: 2.5rem;
 }
 .contact .contact-contents .contact-form .icons {
@@ -149,7 +181,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .c-title {
   position: relative;
-  padding-bottom: 20px;
 }
 .c-title__main {
   font-size: clamp(4.063rem, 4.063rem + (8rem - 4.063rem) * (100vw - 375px) / (1366px - 375px), 8rem);
@@ -165,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .c-title__sub {
   position: relative;
-  margin-left: 12.5px;
+  margin-left: clamp(0px, 0px + (12px - 0px) * (100vw - 375px) / (1366px - 375px), 12px);
   font-size: clamp(1rem, 1rem + (1.5rem - 1rem) * (100vw - 375px) / (1366px - 375px), 1.5rem);
   padding-bottom: 20px;
   position: relative;
@@ -173,18 +204,18 @@ h1, h2, h3, h4, h5, h6 {
 .c-title__sub::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: clamp(-9px, -9px + (1px - -9px) * (100vw - 375px) / (1366px - 375px), 1px);
   left: 0;
-  width: 106px;
+  width: clamp(55px, 55px + (106px - 55px) * (100vw - 375px) / (1366px - 375px), 106px);
   height: 2px;
   background: #1E1E1E;
 }
 .c-title__sub::before {
   content: "";
   position: absolute;
-  bottom: -28px;
+  bottom: clamp(-19px, -19px + (-15px - -19px) * (100vw - 375px) / (1366px - 375px), -15px);
   left: 0;
-  width: 61px;
+  width: clamp(32px, 32px + (61px - 32px) * (100vw - 375px) / (1366px - 375px), 61px);
   height: 2px;
   background: #1E1E1E;
 }
@@ -198,26 +229,26 @@ h1, h2, h3, h4, h5, h6 {
 .c-section-title::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: clamp(-9px, -9px + (1px - -9px) * (100vw - 375px) / (1366px - 375px), 1px);
   left: 0;
-  width: 106px;
+  width: clamp(55px, 55px + (106px - 55px) * (100vw - 375px) / (1366px - 375px), 106px);
   height: 2px;
   background: #1E1E1E;
 }
 .c-section-title::before {
   content: "";
   position: absolute;
-  bottom: -28px;
+  bottom: clamp(-19px, -19px + (-15px - -19px) * (100vw - 375px) / (1366px - 375px), -15px);
   left: 0;
-  width: 61px;
+  width: clamp(32px, 32px + (61px - 32px) * (100vw - 375px) / (1366px - 375px), 61px);
   height: 2px;
   background: #1E1E1E;
 }
 .c-section-title::after {
-  bottom: 10px;
+  bottom: clamp(0px, 0px + (10px - 0px) * (100vw - 375px) / (1366px - 375px), 10px);
 }
 .c-section-title::before {
-  bottom: -6px;
+  bottom: clamp(-10px, -10px + (-6px - -10px) * (100vw - 375px) / (1366px - 375px), -6px);
 }
 
 .card .swiper {
@@ -390,7 +421,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-button {
   position: relative;
-  padding: 0.75rem 9.625rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   font-size: 1.25rem;
   border-radius: 20px;
   color: #1e1e1e;
