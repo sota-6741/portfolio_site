@@ -9,9 +9,9 @@
     &::after {
         content: "";
         position: absolute;
-        bottom: calc(-1 * f.layout(borderline-adjust-y));
+        bottom: f.fluid-clamp(f.layout(borderline-first-bottom-sp), f.layout(borderline-first-bottom));
         left: 0;
-        width: f.layout(longline-width);
+        width: f.fluid-clamp(f.layout(longline-width-sp), f.layout(longline-width));
         height: f.layout(borderline-height);
         background: $line-color;
     }
@@ -20,9 +20,9 @@
     &::before {
         content: "";
         position: absolute;
-        bottom: calc(-1 * (f.layout(borderline-adjust-y) + f.layout(borderline-space) + f.layout(borderline-height)));
+        bottom: f.fluid-clamp(f.layout(borderline-second-bottom-sp), f.layout(borderline-second-bottom));
         left: 0;
-        width: f.layout(shortline-width);
+        width: f.fluid-clamp(f.layout(shortline-width-sp), f.layout(shortline-width));
         height: f.layout(borderline-height);
         background: $line-color;
     }
@@ -50,7 +50,9 @@
 
 @mixin button($string-color: f.color(color-font-base), $background-color: f.color(color-base)) {
     position: relative;
-    padding: 0.75rem 9.625rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     font-size: f.typography(font-size-text-lg);
     border-radius: f.layout(radius-base);
 
