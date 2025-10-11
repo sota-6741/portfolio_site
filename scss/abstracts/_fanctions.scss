@@ -44,6 +44,18 @@
   );
 }
 
+/* 画面幅が広→狭になるにつれて値が小→大になる逆方向の線型変化関数 */
+@function fluid-clamp-reverse($min-size, $max-size, $min-vw: layout(sp-width), $max-vw: layout(base-width)) {
+  @return clamp(
+    #{$min-size},
+    calc(
+      #{$max-size} - (#{$max-size} - #{$min-size}) *
+      ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))
+    ),
+    #{$max-size}
+  );
+}
+
 /* Swiperボタンの位置 */
 @function swiper-button-position($device: default, $side) {
     @return map.get(map.get(layout(swiper-button-positions), $device), $side);
