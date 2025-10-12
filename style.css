@@ -22,6 +22,25 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+}
+header nav {
+  position: relative;
+  width: 100%;
+  pointer-events: auto;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
 body {
   font-family: "dnp-shuei-gothic-kin-std", sans-serif;
   color: #1e1e1e;
@@ -173,10 +192,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
-}
-.contact .contact-contents .copy-right {
-  font-size: 0.938rem;
-  align-self: end;
 }
 
 .c-title {
@@ -440,4 +455,48 @@ h1, h2, h3, h4, h5, h6 {
   border: solid #1e1e1e;
   border-width: 3px 3px 0 0;
   transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger-trigger {
+  position: absolute;
+  top: clamp(30px, 30px + (45px - 30px) * (100vw - 375px) / (1366px - 375px), 45px);
+  right: clamp(30px, 30px + (45px - 30px) * (100vw - 375px) / (1366px - 375px), 45px);
+  width: 50px;
+  height: 44px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+.hamburger-trigger span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #1e1e1e;
+  transition: all 0.5s;
+}
+.hamburger-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.hamburger-trigger span:nth-of-type(2) {
+  top: 20px;
+}
+.hamburger-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+.hamburger-trigger.active span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 20px;
+}
+.hamburger-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.hamburger-trigger.active span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  bottom: 20px;
+}
+
+.copy-right {
+  font-size: 0.938rem;
+  align-self: end;
 }/*# sourceMappingURL=style.css.map */
