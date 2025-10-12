@@ -1,3 +1,5 @@
+@use "../abstracts/fanctions" as f;
+
 *,
 *::before,
 *::after {
@@ -7,4 +9,26 @@
 html,
 body {
     overflow-x: hidden;
+}
+
+// ヘッダーのレイアウト
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    pointer-events: none;
+
+    nav {
+        position: relative;
+        width: 100%;
+        pointer-events: auto;
+    }
+}
+
+// メインコンテンツ
+main {
+    position: relative;
+    z-index: 1;
 }
