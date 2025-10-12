@@ -1,33 +1,20 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const mySwiper = new Swiper('.card .swiper', {
-        slidesPerView: 1,
-        spaceBetween: 33,
-        grabCursor: true,
-        navigation: {
-            nextEl: '.card .swiper-button-next',
-            prevEl: '.card .swiper-button-prev',
-        },
-        breakpoints: {
-            600: {
-                slidesPerView: 2,
-                spaceBetween: 80,
-            }
-        },
-    });
-
-    // 画面幅に応じてボタンの表示/非表示を制御
-    function toggleNavigationButtons() {
-        const buttons = document.querySelectorAll('.swiper-button-prev, .swiper-button-next');
-        if (window.innerWidth <= 600) {
-            buttons.forEach(button => button.style.display = 'none');
-        } else {
-            buttons.forEach(button => button.style.display = 'grid');
+// メインエントリーポイント - 全モジュールの初期化を管理
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('アプリケーション初期化開始');
+    // 各モジュールを初期化
+    try {
+        // Swiperモジュール
+        if (typeof initSwiper === 'function') {
+            initSwiper();
+            console.log('Swiper初期化完了');
         }
+        // ハンバーガーメニューモジュール
+        if (typeof initHamburgerMenu === 'function') {
+            initHamburgerMenu();
+            console.log('ハンバーガーメニュー初期化完了');
+        }
+        console.log('全モジュール初期化完了');
+    } catch (error) {
+        console.error('初期化エラー:', error);
     }
-
-    // 初期実行
-    toggleNavigationButtons();
-
-    // リサイズ時にも実行
-    window.addEventListener('resize', toggleNavigationButtons);
 });
