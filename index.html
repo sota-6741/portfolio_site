@@ -46,9 +46,14 @@
 
     <body>
         <!-- header -->
-        <header>
+        <header class="header">
             <nav>
                 <!-- ハンバーガーメニューの追加-->
+                <button class="hamburger-trigger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </header>
 
@@ -172,9 +177,14 @@
                 </div>
             </section>
         </main>
-    <!-- Swiper JS -->
+    <!-- External Libraries -->
     <script src="https://unpkg.com/swiper@8.4.7/swiper-bundle.min.js"></script>
-    <!-- Custom JS -->
+    
+    <!-- Application Modules -->
+    <script src="./js/swiper.js"></script>
+    <script src="./js/hamburger_menu.js"></script>
+    
+    <!-- Main Entry Point -->
     <script src="./js/index.js"></script>
     </body>
 </html>
