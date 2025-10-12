@@ -1,0 +1,42 @@
+@use "../abstracts/fanctions" as f;
+
+.hamburger-trigger {
+    position: absolute;
+    top: f.fluid-clamp(30px,45px);
+    right: f.fluid-clamp(30px,45px);
+    width: 50px;
+    height: 44px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+
+    span {
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: #1e1e1e;
+        transition: all .5s;
+
+        &:nth-of-type(1) { top: 0; }
+        &:nth-of-type(2) { top: 20px; }
+        &:nth-of-type(3) { bottom: 0; }
+    }
+
+    // アクティブ状態のアニメーション
+    &.active {
+        span {
+            &:nth-of-type(1) {
+                transform: rotate(45deg);
+                top: 20px;
+            }
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                transform: rotate(-45deg);
+                bottom: 20px;
+            }
+        }
+    }
+}
