@@ -46,6 +46,7 @@
         left: -5px;
         bottom: -2px;
     }
+    @content;
 }
 
 @mixin button($string-color: f.color(color-font-base), $background-color: f.color(color-base)) {
