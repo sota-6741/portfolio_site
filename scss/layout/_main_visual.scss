@@ -3,11 +3,21 @@
 
 .main-visual {
     @extend .base-content;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .title-group {
         margin: f.layout(title-vartical-margin) auto;
+    }
+
+    // scroll-indicatorをflexレイアウトから完全除外
+    .scroll-indicator {
+        position: absolute !important;
+        // flexboxの影響を無効化
+        align-self: auto;
+        justify-self: auto;
+        flex: none;
     }
 }
