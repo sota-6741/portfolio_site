@@ -1,0 +1,28 @@
+@use "../abstracts/fanctions" as f;
+@use "../abstracts/mixins" as m;
+
+.scroll-indicator {
+    position: absolute;
+    right: -45px;
+    bottom: 92px;
+    transform: translateX(100%);
+
+    font-size: f.fluid-clamp(16px, 20px);
+    color: f.color(color-font-base);
+    writing-mode: vertical-rl;
+    // m.arrow-borderlineを適用し、縦向きにオーバーライド
+    @include m.arrow-borderline {
+        // 縦向きの矢印にオーバーライド
+        &::after {
+            // 横向きの設定をリセット・縦向きに変更
+            width: 10px;
+            height: 115%;
+            border-bottom: 1px solid f.color(color-font-base);
+            border-left: 1px solid f.color(color-font-base);
+            border-right: none; // 横向きの右ボーダーを無効化
+            transform: skew(0deg, -30deg); // 縦向きの傾斜
+            bottom: -15px;
+            transform-origin: bottom left;
+        }
+    };
+}
