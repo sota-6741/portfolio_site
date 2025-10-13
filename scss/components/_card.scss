@@ -163,7 +163,6 @@
         transform: rotate(45deg);
     }
 
-    // 無効状態の詳細なスタイル（詳細度を上げて確実に適用）
     .swiper-button-prev.swiper-button-disabled,
     .swiper-button-next.swiper-button-disabled {
         transition: none;
