@@ -510,14 +510,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .scroll-indicator {
-  position: absolute;
-  right: -45px;
-  bottom: 92px;
-  transform: translateX(100%);
+  position: fixed;
+  right: clamp(-70px, 5px - (5px - -70px) * (100vw - 375px) / (1366px - 375px), 5px);
+  bottom: clamp(-18px, -18px + (100px - -18px) * (100vw - 375px) / (1366px - 375px), 100px);
   font-size: clamp(16px, 16px + (20px - 16px) * (100vw - 375px) / (1366px - 375px), 20px);
   color: #1e1e1e;
   writing-mode: vertical-rl;
   position: relative;
+  /* 縦向きにオーバーライド（必要箇所のみ上書き） */
 }
 .scroll-indicator::after {
   content: "";
@@ -539,6 +539,7 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 1px solid #1e1e1e;
   border-right: none;
   transform: skew(0deg, -30deg);
-  bottom: -15px;
+  bottom: -12px;
+  left: 0%;
   transform-origin: bottom left;
 }/*# sourceMappingURL=style.css.map */
