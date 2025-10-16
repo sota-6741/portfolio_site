@@ -1,7 +1,7 @@
 @use "../abstracts/fanctions" as f;
 
 .hamburger-trigger {
-    position: absolute;
+    position: fixed;
     top: f.fluid-clamp(30px,45px);
     right: f.fluid-clamp(30px,45px);
     width: f.fluid-clamp(30px, 50px);
@@ -9,14 +9,14 @@
     cursor: pointer;
     background: none;
     border: none;
-    z-index: 2;
+    z-index: 3;
 
     span {
         position: absolute;
         width: 100%;
         height: 2px;
         background: #1e1e1e;
-        transition: all .5s;
+        // transition: all .5s;
 
         &:nth-of-type(1) { top: 0; }
         &:nth-of-type(2) {
@@ -25,21 +25,31 @@
         }
         &:nth-of-type(3) { bottom: 0; }
     }
+    .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 45vw;
+        height: 100vh;
+        background-color: f.color(color-base);
+        z-index: 2;
+        transform: translatex(100%);
+        visibility: hidden;
 
-    // アクティブ状態のアニメーション
-    &.active {
-        span {
-            &:nth-of-type(1) {
-                top: 50%;
-                transform: translateY(-50%) rotate(45deg);
-            }
-            &:nth-of-type(2) {
-                opacity: 0;
-            }
-            &:nth-of-type(3) {
-                bottom: 50%;
-                transform: translateY(50%) rotate(-45deg);
+        display:flex;
+        flex-direction: column;
+        padding-left: 100px;
+
+        .menu-links a {
+            // リンクの実装
+        }
+
+        .menu-icons {
+            .menu-icon{
+
             }
         }
+
+
     }
 }
