@@ -49,6 +49,17 @@
     @content;
 }
 
+@mixin borderline {
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: f.color(color-borderline);
+    }
+    @content;
+}
+
 @mixin button($string-color: f.color(color-font-base), $background-color: f.color(color-base)) {
     position: relative;
     display: flex;
