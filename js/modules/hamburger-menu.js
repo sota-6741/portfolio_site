@@ -15,12 +15,12 @@ export function initHamburgerMenu() {
     menuTL.fromTo(menu,
         { // From
             opacity: 0,
-            filter: 'blur(15px)'
+            filter: 'blur(25px)'
         },
         { // To
             opacity: 1,
             filter: 'blur(0px)',
-            duration: 0.3,
+            duration: 0.8,
             ease: 'power2.inOut',
             visibility: 'visible'
         }
