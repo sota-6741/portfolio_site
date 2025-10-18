@@ -27,30 +27,35 @@
     @return map.get($tokens-layout, $name);
 }
 
-/* pxをvwに変換する関数 */
+/* pxをコンテナ幅に対する割合に変換する関数（main-content-wrapper幅参照対応） */
 @function px-to-vw($px, $base: layout(base-width)) {
-    @return math.div($px, $base) * 100vw;
+    @return calc(#{math.div($px, $base) * 100} * var(--container-width, 100vw) / 100);
 }
 
-/* pcとspのビューポート間を線型的にサイズ変化させる関数 (要検討) */
+/* コンテナ幅対応のレスポンシブ関数 */
+@function responsive-vw($vw-value) {
+    @return calc(#{$vw-value} * var(--container-width, 100vw) / 100vw);
+}
+
+/* pcとspのビューポート間を線型的にサイズ変化させる関数（main-content-wrapper幅参照対応） */
 @function fluid-clamp($min-size, $max-size, $min-vw: layout(sp-width), $max-vw: layout(base-width)) {
   @return clamp(
     #{$min-size},
     calc(
       #{$min-size} + (#{$max-size} - #{$min-size}) *
-      ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))
+      ((var(--container-width, 100vw) - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))
     ),
     #{$max-size}
   );
 }
 
-/* 画面幅が広→狭になるにつれて値が小→大になる逆方向の線型変化関数 */
+/* 画面幅が広→狭になるにつれて値が小→大になる逆方向の線型変化関数（main-content-wrapper幅参照対応） */
 @function fluid-clamp-reverse($min-size, $max-size, $min-vw: layout(sp-width), $max-vw: layout(base-width)) {
   @return clamp(
     #{$min-size},
     calc(
       #{$max-size} - (#{$max-size} - #{$min-size}) *
-      ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))
+      ((var(--container-width, 100vw) - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))
     ),
     #{$max-size}
   );
