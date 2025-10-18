@@ -1,7 +1,17 @@
 @use "../abstracts/fanctions" as f;
 @use "../abstracts/mixins" as m;
 
-.hamburger-trigger {
+// メインコンテンツラッパー（GSAP制御用）
+.main-content-wrapper {
+    width: 100%;
+    height: 100%;
+    // GSAPでアニメーション時にスムーズな変形を実現
+    transform-origin: left top;
+    overflow: hidden; // コンテンツがはみ出さないように
+}
+
+.hamburger-trigger,
+#hamburger-menu {
     position: fixed;
     top: f.fluid-clamp(30px,45px);
     right: f.fluid-clamp(30px,45px);
@@ -34,6 +44,7 @@
     right: 0;
     width: 45vw;
     height: 100vh;
+    padding-left: f.fluid-clamp(76px, 100px);
     background-color: f.color(color-base);
     z-index: 2;
     transform: translatex(100%);
@@ -42,13 +53,11 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 100px;
 
     .menu-links {
         display: flex;
         flex-direction: column;
         gap: f.fluid-clamp(20px, 30px);
-        padding-left: f.fluid-clamp(76px, 100px);
 
         a {
             // リンクの実装
@@ -69,5 +78,19 @@
         }
     }
 
-    // menu-icons block removed (no styles currently required)
+    .menu-icons {
+        gap: f.fluid-clamp(15px, 30px);
+
+        .menu-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: f.fluid-clamp(30px, 50px);
+                height: f.fluid-clamp(30px, 50px);
+                object-fit: contain;
+            }
+        }
+    }
 }
