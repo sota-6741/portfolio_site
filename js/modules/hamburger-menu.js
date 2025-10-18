@@ -15,7 +15,7 @@ export function initHamburgerMenu() {
     menuTL.fromTo(menu,
         { // From
             opacity: 0,
-            filter: 'blur(5px)'
+            filter: 'blur(15px)'
         },
         { // To
             opacity: 1,
