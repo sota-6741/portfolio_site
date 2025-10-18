@@ -33,9 +33,9 @@ export function initSwiper() {
             prevEl: '.card .swiper-button-prev',
         },
         breakpoints: {
-            600: { 
-                slidesPerView: 2, 
-                spaceBetween: 80 
+            600: {
+                slidesPerView: 2,
+                spaceBetween: 80
             }
         },
     });
