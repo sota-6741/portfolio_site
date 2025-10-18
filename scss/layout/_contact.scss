@@ -6,6 +6,8 @@
     background-color: f.color(color-footer);
     color: f.color(color-base);
     margin-inline: auto;
+    position: relative;
+    z-index: 3;
     padding-top: f.fluid-clamp(f.layout(contact-padding-top-sp), f.layout(contact-padding-top));
     padding-bottom: f.fluid-clamp(f.layout(contact-padding-bottom-sp), f.layout(contact-padding-bottom));
     border-radius: f.layout(radius-base) f.layout(radius-base) 0 0;
