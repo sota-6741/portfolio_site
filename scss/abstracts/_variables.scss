@@ -169,9 +169,3 @@ $tokens-breakpoint: (
     swiper-sp: "screen and (max-width: 600px)",
     contact-sp: "screen and (max-width: 950px)"
 ) !default;
-
-/* CSS Custom Properties の初期値 */
-:root {
-    --container-width: 100vw; // デフォルト値（JavaScript側で上書きされる）
-}
-
