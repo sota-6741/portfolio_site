@@ -97,7 +97,7 @@
                 gap: f.fluid-clamp(30px, 50px);
                 width: fit-content;
 
-                a {
+                .menu-link {
                     font-size: f.fluid-clamp(48px, 64px);
                     line-height: 1;
                     display: inline-block;
@@ -113,6 +113,11 @@
                                 width: 100%;
                             }
                         }
+                    }
+
+                    > .char {
+                        filter: blur(8px);
+                        opacity: 0;
                     }
                 }
             }
@@ -170,7 +175,7 @@
                     gap: f.fluid-clamp(30px, 50px);
                     width: auto;
 
-                    a {
+                    .menu-link {
                         font-size: f.fluid-clamp(48px, 64px);
                         line-height: 1;
                         display: inline-block;
