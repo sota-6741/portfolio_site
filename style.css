@@ -575,9 +575,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #1E1E1E;
 }
 .menu .menu-right .menu-inner .menu-links a.home::after {
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  left: 5px;
+  bottom: -8px;
+  width: 175px;
 }
 .menu .menu-right .menu-inner .menu-icons {
   display: flex;
