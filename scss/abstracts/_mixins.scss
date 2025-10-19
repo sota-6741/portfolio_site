@@ -73,6 +73,20 @@
     @content;
 }
 
+@mixin borderline-scroll {
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: f.color(color-borderline);
+        width: 1px;
+        height: 115%;
+        border-right: none;
+        bottom: -12px;
+        left: 0%;
+        transform-origin: bottom left;
+    }
+}
+
 @mixin button($string-color: f.color(color-font-base), $background-color: f.color(color-base)) {
     position: relative;
     display: flex;
