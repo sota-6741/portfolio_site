@@ -2,15 +2,27 @@ import {$} from '../utils.js';
 
 export function initHamburgerMenu() {
     // テキストを分割してspanタグで囲む
-    const menuLinks = document.querySelectorAll('.menu-link');
-    menuLinks.forEach(link => {
-        const text = link.textContent;
-        link.innerHTML = ''; // 元のテキストをクリア
-        for (let i = 0; i < text.length; i++) {
-            const charSpan = document.createElement('span');
-            charSpan.classList.add('char');
-            charSpan.textContent = text[i];
-            link.appendChild(charSpan);
+    const menuItems = document.querySelectorAll('.menu-link, .menu-icon');
+    menuItems.forEach(item => {
+        // 画像を持つ場合
+        const img = item.querySelector('img');
+        if (img) {
+            const wrapper = document.createElement('span');
+            wrapper.classList.add('char');
+            item.replaceChild(wrapper, img);
+            wrapper.appendChild(img);
+            return; // 画像の場合はテキスト分割をスキップ
+        }
+
+        if (item.textContent.trim().length > 0) {
+            const text = item.textContent;
+            item.innerHTML = ''; // 元のテキストをクリア
+            for (let i = 0; i < text.length; i++) {
+                const charSpan = document.createElement('span');
+                charSpan.classList.add('char');
+                charSpan.textContent = text[i];
+                item.appendChild(charSpan);
+            }
         }
     });
 
@@ -43,14 +55,14 @@ export function initHamburgerMenu() {
     );
 
     /*------------------------------
-    * menu-link表示タアニメーション
+    * menu-item表示タアニメーション
     ------------------------------*/
-    const linkTL = gsap.timeline();
+    const itemTL = gsap.timeline();
 
-    menuLinks.forEach(link => {
-        const chars = link.querySelectorAll('.char');
-        const linkAnimation = gsap.timeline();
-        linkAnimation.fromTo(
+    menuItems.forEach(item => {
+        const chars = item.querySelectorAll('.char');
+        const itemAnimation = gsap.timeline();
+        itemAnimation.fromTo(
             chars,
             { filter: 'blur(8px)', opacity: 0 },
             {
@@ -61,19 +73,19 @@ export function initHamburgerMenu() {
                 stagger: 0.1, // 各文字間の遅延
             }
         );
-        linkTL.add(linkAnimation, 0); // すべてのリンクアニメーションを同時に開始
+        itemTL.add(itemAnimation, 0); // すべてのリンクアニメーションを同時に開始
     });
 
-    // menuTL後にlinkTLを再生
-    menuTL.add(linkTL, '>0.02');
+    // menuTL後にitemTLを再生
+    menuTL.add(itemTL, '>0.02');
 
     trigger.addEventListener('click', () => {
         menuTL.reversed() ? menuTL.play() : menuTL.reverse();
     });
 
     // メニューリンククリック時にメニューを閉じる
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
             if (trigger.classList.contains('active')) {
                 menuTL.reverse();
             }
