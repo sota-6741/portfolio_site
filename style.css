@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "dnp-shuei-gothic-kin-std", sans-serif;
 }
 
-.base-content, .menu .menu-left .main-visual, .contact .contact-contents, .works, .insert-photo, .about-me, .main-visual {
+.base-content, .menu .menu-left .main-visual, .menu .menu-right .menu-inner, .contact .contact-contents, .works, .insert-photo, .about-me, .main-visual {
   container-type: inline-size;
   max-inline-size: 1100px;
   inline-size: clamp(320px, 320px + (1100px - 320px) * (100vw - 375px) / (1366px - 375px), 1100px);
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-block-end: 180px;
 }
 @container (min-width: 600px) {
-  .base-content, .menu .menu-left .main-visual, .contact .contact-contents, .works, .insert-photo, .about-me, .main-visual {
+  .base-content, .menu .menu-left .main-visual, .menu .menu-right .menu-inner, .contact .contact-contents, .works, .insert-photo, .about-me, .main-visual {
     margin-block-end: 200px;
   }
 }
@@ -552,42 +552,44 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: clamp(40px, 40px + (60px - 40px) * (100vw - 375px) / (1366px - 375px), 60px);
 }
-.menu .menu-right .menu-links {
+.menu .menu-right .menu-inner .menu-links {
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 20px + (30px - 20px) * (100vw - 375px) / (1366px - 375px), 30px);
+  margin-bottom: clamp(30px, 30px + (50px - 30px) * (100vw - 375px) / (1366px - 375px), 50px);
+  gap: clamp(30px, 30px + (50px - 30px) * (100vw - 375px) / (1366px - 375px), 50px);
 }
-.menu .menu-right .menu-links a {
+.menu .menu-right .menu-inner .menu-links a {
   font-size: clamp(48px, 48px + (64px - 48px) * (100vw - 375px) / (1366px - 375px), 64px);
+  line-height: 1;
   display: inline-block;
   width: auto;
 }
-.menu .menu-right .menu-links a.home {
+.menu .menu-right .menu-inner .menu-links a.home {
   position: relative;
 }
-.menu .menu-right .menu-links a.home::after {
+.menu .menu-right .menu-inner .menu-links a.home::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   background-color: #1E1E1E;
 }
-.menu .menu-right .menu-links a.home::after {
+.menu .menu-right .menu-inner .menu-links a.home::after {
   left: 0;
   bottom: 0;
   width: 100%;
 }
-.menu .menu-right .menu-icons {
+.menu .menu-right .menu-inner .menu-icons {
   display: flex;
   gap: clamp(20px, 20px + (30px - 20px) * (100vw - 375px) / (1366px - 375px), 30px);
   justify-content: flex-start;
 }
-.menu .menu-right .menu-icons .menu-icon {
+.menu .menu-right .menu-inner .menu-icons .menu-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.menu .menu-right .menu-icons .menu-icon img {
+.menu .menu-right .menu-inner .menu-icons .menu-icon img {
   width: clamp(30px, 30px + (50px - 30px) * (100vw - 375px) / (1366px - 375px), 50px);
   height: clamp(30px, 30px + (50px - 30px) * (100vw - 375px) / (1366px - 375px), 50px);
   -o-object-fit: contain;
