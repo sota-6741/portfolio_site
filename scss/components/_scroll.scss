@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as m;
 
 .scroll-indicator {
-    position: fixed;
+    position: absolute;
     right: f.fluid-clamp-reverse(-70px, 5px);
     bottom: f.fluid-clamp(-18px, 100px);
 
@@ -10,15 +10,5 @@
     color: f.color(color-font-base);
     writing-mode: vertical-rl;
 
-    @include m.borderline {
-        /* 縦向きにオーバーライド（必要箇所のみ上書き） */
-        &::after {
-            width: 1px;
-            height: 115%;
-            border-right: none;
-            bottom: -12px;
-            left: 0%;
-            transform-origin: bottom left;
-        }
-    };
+    @include m.borderline-scroll;
 }
