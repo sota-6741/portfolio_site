@@ -2,6 +2,9 @@
 @use "../abstracts/mixins" as m;
 @use "./base_content" as *;
 
+// TODO: お気軽に〜を擬似要素として実装
+// TODO: 矢印と文字の高さを揃える
+
 .contact {
     background-color: f.color(color-footer);
     color: f.color(color-base);
