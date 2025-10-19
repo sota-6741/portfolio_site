@@ -1,5 +1,7 @@
 import {$} from '../utils.js';
 
+// TODO: reverse()アニメーション時にmenuItemsのhoverを無効化する
+
 export function initHamburgerMenu() {
     // テキストを分割してspanタグで囲む
     const menuItems = document.querySelectorAll('.menu-link, .menu-icon');
