@@ -77,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .main-visual .scroll-indicator {
   right: 0;
+  transform: translateX(100%);
 }
 
 .about-me p {
