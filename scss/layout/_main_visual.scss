@@ -14,14 +14,7 @@
         margin: f.layout(title-vartical-margin) auto;
     }
 
-    // scroll-indicatorをflexレイアウトから完全除外
     .scroll-indicator {
-        position: absolute !important;
-        // flexboxの影響を無効化
         right: 0;
-        transform: translateX(100%);
-        align-self: auto;
-        justify-self: auto;
-        flex: none;
     }
 }
