@@ -1,6 +1,8 @@
 @use "../abstracts/fanctions" as f;
 @use "./base_content" as *;
 
+// TODO: scroll-indicatorを棒線に
+
 .main-visual {
     @extend .base-content;
     position: relative;
@@ -16,6 +18,8 @@
     .scroll-indicator {
         position: absolute !important;
         // flexboxの影響を無効化
+        right: 0;
+        transform: translateX(100%);
         align-self: auto;
         justify-self: auto;
         flex: none;
