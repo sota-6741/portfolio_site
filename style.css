@@ -76,12 +76,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 30.5vh auto;
 }
 .main-visual .scroll-indicator {
-  position: absolute !important;
   right: 0;
-  transform: translateX(100%);
-  align-self: auto;
-  justify-self: auto;
-  flex: none;
 }
 
 .about-me p {
@@ -683,32 +678,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .scroll-indicator {
-  position: fixed;
+  position: absolute;
   right: clamp(-70px, 5px - (5px - -70px) * (100vw - 375px) / (1366px - 375px), 5px);
   bottom: clamp(-18px, -18px + (100px - -18px) * (100vw - 375px) / (1366px - 375px), 100px);
   font-size: clamp(16px, 16px + (20px - 16px) * (100vw - 375px) / (1366px - 375px), 20px);
   color: #1e1e1e;
   writing-mode: vertical-rl;
-  position: relative;
-  /* 縦向きにオーバーライド（必要箇所のみ上書き） */
 }
 .scroll-indicator::after {
-  background-color: #1E1E1E;
-  bottom: -8px;
-  content: "";
-  width: 100%;
-  height: 2px;
-  left: 5px;
   position: absolute;
-  transform: scale(0, 1);
-  transform-origin: right top;
-  transition: transform 0.3s;
-}
-.scroll-indicator:hover::after {
-  transform-origin: left top;
-  transform: scale(1, 1);
-}
-.scroll-indicator::after {
+  content: "";
+  background-color: #1E1E1E;
   width: 1px;
   height: 115%;
   border-right: none;
