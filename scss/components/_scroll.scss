@@ -10,15 +10,12 @@
     color: f.color(color-font-base);
     writing-mode: vertical-rl;
 
-    @include m.arrow-borderline {
+    @include m.borderline {
         /* 縦向きにオーバーライド（必要箇所のみ上書き） */
         &::after {
-            width: 10px;
+            width: 1px;
             height: 115%;
-            border-bottom: 1px solid f.color(color-font-base);
-            border-left: 1px solid f.color(color-font-base);
             border-right: none;
-            transform: skew(0deg, -30deg);
             bottom: -12px;
             left: 0%;
             transform-origin: bottom left;
