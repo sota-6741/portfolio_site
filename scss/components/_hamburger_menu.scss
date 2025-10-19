@@ -87,43 +87,48 @@
         justify-content: center;
         gap: f.fluid-clamp(40px, 60px);
 
-        .menu-links {
-            display: flex;
-            flex-direction: column;
-            gap: f.fluid-clamp(20px, 30px);
+        .menu-inner {
+            @extend .base-content;
+            .menu-links {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: f.fluid-clamp(30px, 50px);
+                gap: f.fluid-clamp(30px, 50px);
 
-            a {
-                font-size: f.fluid-clamp(48px, 64px);
-                display: inline-block;
-                width: auto;
+                a {
+                    font-size: f.fluid-clamp(48px, 64px);
+                    line-height: 1;
+                    display: inline-block;
+                    width: auto;
 
-                &.home {
-                    position: relative;
-                    @include m.borderline {
-                        &::after {
-                            left: 0;
-                            bottom: 0;
-                            width: 100%;
+                    &.home {
+                        position: relative;
+                        @include m.borderline {
+                            &::after {
+                                left: 0;
+                                bottom: 0;
+                                width: 100%;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        .menu-icons {
-            display: flex;
-            gap: f.fluid-clamp(20px, 30px);
-            justify-content: flex-start;
+            .menu-icons {
+                display: flex;
+                gap: f.fluid-clamp(20px, 30px);
+                justify-content: flex-start;
 
-            .menu-icon {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
+                .menu-icon {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
 
-                img {
-                    width: f.fluid-clamp(30px, 50px);
-                    height: f.fluid-clamp(30px, 50px);
-                    object-fit: contain;
+                    img {
+                        width: f.fluid-clamp(30px, 50px);
+                        height: f.fluid-clamp(30px, 50px);
+                        object-fit: contain;
+                    }
                 }
             }
         }
