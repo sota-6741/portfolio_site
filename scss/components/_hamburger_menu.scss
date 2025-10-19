@@ -98,21 +98,16 @@
                 width: fit-content;
 
                 .menu-link {
+                    position: relative;
+                    text-decoration: none;
                     font-size: f.fluid-clamp(48px, 64px);
                     line-height: 1;
                     display: inline-block;
                     width: fit-content;
+                    @include m.borderline;
 
                     &:hover {
                         opacity: 0.8;
-                        position: relative;
-                        @include m.borderline {
-                            &::after {
-                                left: 5px;
-                                bottom: -8px;
-                                width: 100%;
-                            }
-                        }
                     }
 
                     > .char {
@@ -138,6 +133,9 @@
                         width: f.fluid-clamp(30px, 50px);
                         height: f.fluid-clamp(30px, 50px);
                         object-fit: contain;
+                    }
+                    &:hover {
+                        opacity: 0.8;
                     }
                 }
             }
