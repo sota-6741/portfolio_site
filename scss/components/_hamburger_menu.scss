@@ -75,6 +75,7 @@
 
             .title-group {
                 margin: f.layout(title-vartical-margin) auto;
+                transform: scale(0.65);
             }
         }
     }
@@ -94,12 +95,13 @@
                 flex-direction: column;
                 margin-bottom: f.fluid-clamp(30px, 50px);
                 gap: f.fluid-clamp(30px, 50px);
+                width: fit-content;
 
                 a {
                     font-size: f.fluid-clamp(48px, 64px);
                     line-height: 1;
                     display: inline-block;
-                    width: auto;
+                    width: fit-content;
 
                     &.home {
                         position: relative;
@@ -107,7 +109,7 @@
                             &::after {
                                 left: 5px;
                                 bottom: -8px;
-                                width: 175px;
+                                width: f.fluid-clamp(128px, 170px);
                             }
                         }
                     }
@@ -118,16 +120,91 @@
                 display: flex;
                 gap: f.fluid-clamp(20px, 30px);
                 justify-content: flex-start;
+                width: fit-content;
 
                 .menu-icon {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
+                    width: fit-content;
 
                     img {
                         width: f.fluid-clamp(30px, 50px);
                         height: f.fluid-clamp(30px, 50px);
                         object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    @include m.break-point("menu-sp") {
+        grid-template-columns: 1fr; // 1カラムレイアウト
+        .menu-left {
+            display: none; // 左カラムを非表示
+        }
+
+        .menu-right {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: f.fluid-clamp(40px, 60px);
+
+            .menu-inner {
+                all: unset;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                align-items: flex-start;
+
+
+                .menu-links {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-bottom: f.fluid-clamp(30px, 50px);
+                    gap: f.fluid-clamp(30px, 50px);
+                    width: auto;
+
+                    a {
+                        font-size: f.fluid-clamp(48px, 64px);
+                        line-height: 1;
+                        display: inline-block;
+                        width: auto;
+                        white-space: nowrap;
+
+                        &.home {
+                            position: relative;
+                            @include m.borderline {
+                                &::after {
+                                    left: 5px;
+                                    bottom: -8px;
+                                    width: f.fluid-clamp(128px, 170px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .menu-icons {
+                    display: flex;
+                    gap: f.fluid-clamp(20px, 30px);
+                    justify-content: flex-start;
+                    width: auto;
+
+                    .menu-icon {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            width: f.fluid-clamp(30px, 50px);
+                            height: f.fluid-clamp(30px, 50px);
+                            object-fit: contain;
+                        }
                     }
                 }
             }
