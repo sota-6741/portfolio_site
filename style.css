@@ -155,15 +155,12 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateY(35px);
 }
 @media screen and (max-width: 950px) {
   .contact .contact-contents .contact-form {
     align-self: center;
   }
-}
-.contact .contact-contents .contact-form .contact-form-text {
-  font-size: 0.938rem;
-  margin-bottom: 0.813rem;
 }
 .contact .contact-contents .contact-form .contact-button {
   position: relative;
@@ -459,11 +456,20 @@ h1, h2, h3, h4, h5, h6 {
   top: 50%;
   right: 1.875rem;
   display: block;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 0.938rem;
+  height: 0.938rem;
   border: solid #1e1e1e;
   border-width: 3px 3px 0 0;
   transform: translateY(-50%) rotate(45deg);
+}
+.contact-button::before {
+  content: "お気軽にお問い合わせください！";
+  position: absolute;
+  display: inline-block;
+  font-size: 0.938rem;
+  color: #ffffff;
+  top: -15px;
+  transform: translateY(-100%);
 }
 
 .hamburger-trigger,
