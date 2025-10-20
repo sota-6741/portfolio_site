@@ -38,6 +38,7 @@
     position: relative;
     font-size: f.fluid-clamp(f.typography(font-size-section-title-sp), f.typography(font-size-section-title));
     margin-bottom: f.layout(section-title-margin-bottom);
+    white-space: nowrap;
 
     @include m.title-borderline(f.color(color-borderline)) {
         &::after {
