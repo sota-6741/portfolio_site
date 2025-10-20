@@ -42,7 +42,9 @@ export function initHamburgerMenu() {
     });
 
     // menu表示アニメーション
-    menuTL.fromTo(menu,
+    menuTL
+        .set(menuItems, { pointerEvents: 'none' })
+        .fromTo(menu,
         { // From
             opacity: 0,
             filter: 'blur(25px)'
@@ -79,7 +81,8 @@ export function initHamburgerMenu() {
     });
 
     // menuTL後にitemTLを再生
-    menuTL.add(itemTL, '>0.02');
+    menuTL.add(itemTL, '>0.02')
+        .set(menuItems, { pointerEvents: 'auto' });
 
     trigger.addEventListener('click', () => {
         menuTL.reversed() ? menuTL.play() : menuTL.reverse();
