@@ -2,8 +2,9 @@
 @use "../abstracts/mixins" as m;
 @use "./base_content" as *;
 
-// TODO: お気軽に〜を擬似要素として実装
-// TODO: 矢印と文字の高さを揃える
+// TODO: お気軽に〜を擬似要素として実装 実デバッグ
+// TODO: section-titleとボタンの高さを揃える 実デバッグ
+// TODO: 矢印と文字の高さを揃える 未デバッグ
 
 .contact {
     background-color: f.color(color-footer);
@@ -42,16 +43,17 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            transform: translateY(35px);
 
             @include m.break-point("contact-sp") {
                 align-self: center;
             }
 
 
-            .contact-form-text {
-                font-size: 0.938rem;
-                margin-bottom: f.layout(contact-text-margin);
-            }
+            // .contact-form-text {
+            //     font-size: 0.938rem;
+            //     margin-bottom: f.layout(contact-text-margin);
+            // }
 
             .contact-button {
                 @include m.button() {
