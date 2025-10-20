@@ -15,7 +15,24 @@ export function initsectionTitleAnimation() {
 
     sectionTitles.forEach(item => {
         const chars = item.querySelectorAll('.char');
-        gsap.fromTo(
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: item,
+                start: "top center",
+            }
+        });
+
+        tl.fromTo(
+            item,
+            { filter: 'blur(8px)', opacity: 0, width: 0},
+            {
+                keyframes: [
+                    { filter: 'blur(2px)', opacity: 1, duration: 0.33 },
+                    { filter: 'blur(0px)', opacity: 1, duration: 0.17 },
+                ]
+            }
+        )
+        .fromTo(
             chars,
             { filter: 'blur(8px)', opacity: 0 },
             {
@@ -24,11 +41,8 @@ export function initsectionTitleAnimation() {
                     { filter: 'blur(0px)', opacity: 1, duration: 0.17 },
                 ],
                 stagger: 0.1, // 各文字間の遅延
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top center",
-                }
-            }
-        )
+            },
+            "<"
+        );
     })
 }
