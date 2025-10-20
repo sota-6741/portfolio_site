@@ -1,4 +1,4 @@
-import {$} from '../utils.js';
+import {$} from '../utils/utils.js';
 
 // TODO: reverse()アニメーション時にmenuItemsのhoverを無効化する
 

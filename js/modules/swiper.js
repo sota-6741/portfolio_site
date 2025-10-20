@@ -3,7 +3,7 @@
  * ポートフォリオ作品のスライドショー管理
  */
 
-import { $, $$, warn } from '../utils.js';
+import { $, $$, warn } from '../utils/utils.js';
 
 /**
  * Swiperの初期化

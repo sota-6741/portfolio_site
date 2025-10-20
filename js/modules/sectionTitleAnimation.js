@@ -1,5 +1,3 @@
-import {$} from '../utils.js';
-
 export function initsectionTitleAnimation() {
     const sectionTitles = document.querySelectorAll('.js-text-animation');
     sectionTitles.forEach(tilte => {
