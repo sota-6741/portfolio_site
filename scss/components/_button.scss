@@ -1,29 +1,2 @@
 @use "../abstracts/fanctions" as f;
 @use "../abstracts/mixins" as m;
-
-.contact-button {
-    @include m.button() {
-        // 右端に矢印アイコンを配置
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 1.875rem;
-            display: block;
-            width: 0.938rem;
-            height: 0.938rem;
-            border: solid f.color(color-font-base);
-            border-width: 3px 3px 0 0;
-            transform: translateY(-50%) rotate(45deg);
-        }
-        &::before {
-            content: "お気軽にお問い合わせください！";
-            position: absolute;
-            display: inline-block;
-            font-size: 0.938rem;
-            color: f.color(color-base);
-            top: -15px;
-            transform: translateY(-100%)
-        }
-    }
-}
