@@ -232,6 +232,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   background-color: #ffffff;
   border-radius: 50%;
+  transition: opacity 0.5s ease;
 }
 .contact .contact-contents .contact-form .icons .contact-icon img {
   width: 30px;
@@ -624,6 +625,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   width: -moz-fit-content;
   width: fit-content;
+  transition: opacity 0.5s ease;
 }
 .menu .menu-right .menu-inner .menu-icons .menu-icon img {
   width: clamp(30px, 30px + (50px - 30px) * (100vw - 375px) / (1366px - 375px), 50px);
