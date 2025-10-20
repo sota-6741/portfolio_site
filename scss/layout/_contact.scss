@@ -108,6 +108,7 @@
                     align-items: center;
                     background-color: f.color(color-base);
                     border-radius: 50%;
+                    transition: opacity 0.5s ease;
 
                     img {
                         width: f.layout(contact-icon-img-size);
