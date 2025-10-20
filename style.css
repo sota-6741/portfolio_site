@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(43px);
+  transform: translateY(55px);
 }
 @media screen and (max-width: 950px) {
   .contact .contact-contents .contact-form {
@@ -374,7 +374,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 600px) {
   .card .slide-content .slide-text {
-    margin-bottom: 7rem;
+    margin-bottom: 0.625rem;
   }
 }
 .card .slide-content .slide-link {
@@ -382,6 +382,7 @@ h1, h2, h3, h4, h5, h6 {
   align-self: flex-end;
   margin-top: auto;
   position: relative;
+  transform: translateX(-15%);
   position: relative;
 }
 .card .slide-content .slide-link::after {
@@ -397,7 +398,7 @@ h1, h2, h3, h4, h5, h6 {
   left: -5px;
   bottom: -2px;
 }
-.card [class*=swiper]:focus {
+.card [class*=swiper]:focuXs {
   outline: none;
 }
 .card .slide-media,
@@ -453,7 +454,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.8s cubic-bezier(0.2, 1, 0.2, 1), transform 0.8s cubic-bezier(0.2, 1, 0.2, 1), background-color 0.8s cubic-bezier(0.2, 1, 0.2, 1);
   pointer-events: none;
   opacity: 0.3;
-  border: 1px solid #ffffff;
   border-radius: 50%;
   cursor: default;
 }
