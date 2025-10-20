@@ -1,7 +1,7 @@
 @use "../abstracts/fanctions" as f;
 @use "./base_content" as *;
 
-// TODO: scroll-indicatorを棒線に
+// TODO: scroll-indicatorを棒線に 未デバッグ
 
 .main-visual {
     @extend .base-content;
