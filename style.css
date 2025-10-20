@@ -203,6 +203,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #ffffff;
   width: clamp(318px, 318px + (467px - 318px) * (100vw - 375px) / (1366px - 375px), 467px);
   height: 60px;
+  transition: opacity 0.5s ease;
 }
 .contact .contact-contents .contact-form .contact-button::after {
   content: "";
