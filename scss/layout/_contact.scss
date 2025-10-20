@@ -75,6 +75,7 @@
                 @include m.button() {
                     width: f.fluid-clamp(f.layout(contact-button-width-sp), f.layout(contact-button-width));
                     height: f.layout(contact-button-height);
+                    transition: opacity 0.5s ease;
 
                     // 右端に矢印アイコンを配置
                     &::after {
