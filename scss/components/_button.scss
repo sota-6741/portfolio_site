@@ -16,5 +16,14 @@
             border-width: 3px 3px 0 0;
             transform: translateY(-50%) rotate(45deg);
         }
+        &::before {
+            content: "お気軽にお問い合わせください！";
+            position: absolute;
+            display: inline-block;
+            font-size: 0.938rem;
+            color: f.color(color-base);
+            top: -15px;
+            transform: translateY(-100%)
+        }
     }
 }
