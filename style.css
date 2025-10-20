@@ -470,7 +470,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: none;
   pointer-events: none;
   opacity: 0.3;
-  border: 1px solid #ffffff;
   border-radius: 50%;
   cursor: default;
 }
