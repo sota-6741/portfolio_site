@@ -10,7 +10,7 @@ import { $, $$, warn } from '../utils.js';
  * レスポンシブ対応とナビゲーションボタン制御を含む
  */
 export function initSwiper() {
-    // Swiperライブラリの存在確認
+    // SwiperライブラリのXXXX存在確認
     if (typeof Swiper === 'undefined') {
         warn('Swiper が読み込まれていません');
         return;
