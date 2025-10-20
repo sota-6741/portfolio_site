@@ -73,7 +73,7 @@
             line-height: f.typography(line-height-base);
 
             @include m.break-point(swiper-sp) {
-                margin-bottom: 7rem;
+                margin-bottom: 0.625rem;
             }
         }
         .slide-link {
@@ -81,11 +81,12 @@
             align-self: flex-end;
             margin-top: auto;
             position: relative;
+            transform: translateX(-15%);
             @include m.arrow-borderline;
         }
     }
 
-    [class*=swiper]:focus {
+    [class*=swiper]:focuXs {
         outline: none;
     }
 
@@ -148,7 +149,6 @@
                 background-color f.animation(transition);
             pointer-events: none;
             opacity: f.opacity(button-disable);
-            border: 1px solid f.color(color-button-outline);
             border-radius: 50%;
             cursor: default;
         }
