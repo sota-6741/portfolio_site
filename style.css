@@ -46,7 +46,7 @@ body {
   font-family: "dnp-shuei-gothic-kin-std", sans-serif;
   color: #1e1e1e;
   font-size: 3rem;
-  line-height: 1.6;
+  line-height: 2;
   text-align: justify;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -76,13 +76,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 30.5vh auto;
 }
 .main-visual .scroll-indicator {
-  right: 0;
+  right: clamp(-30px, 5px - (5px - -30px) * (100vw - 375px) / (1366px - 375px), 5px);
   transform: translateX(100%);
 }
 
 .about-me p {
   font-size: 1.125rem;
-  line-height: 1.6;
+  line-height: 2;
+  letter-spacing: 0.05rem;
 }
 
 .insert-photo img {
@@ -155,12 +156,31 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(40px);
+  transform: translateY(43px);
 }
 @media screen and (max-width: 950px) {
   .contact .contact-contents .contact-form {
     align-self: center;
   }
+}
+.contact .contact-contents .contact-form .contact-button-wrapper {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+.contact .contact-contents .contact-form .contact-button-wrapper:hover .contact-button {
+  opacity: 0.8;
+}
+.contact .contact-contents .contact-form .contact-button-wrapper::before {
+  content: "お気軽にお問い合わせください！";
+  position: absolute;
+  display: inline-block;
+  font-size: 0.938rem;
+  color: #ffffff;
+  top: -15px;
+  transform: translateY(-100%);
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  white-space: nowrap;
 }
 .contact .contact-contents .contact-form .contact-button {
   position: relative;
@@ -173,7 +193,18 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #ffffff;
   width: clamp(318px, 318px + (467px - 318px) * (100vw - 375px) / (1366px - 375px), 467px);
   height: 60px;
-  margin-bottom: 2.5rem;
+}
+.contact .contact-contents .contact-form .contact-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1.875rem;
+  display: block;
+  width: 0.938rem;
+  height: 0.938rem;
+  border: solid #1e1e1e;
+  border-width: 2px 2px 0 0;
+  transform: translateY(-50%) rotate(45deg);
 }
 .contact .contact-contents .contact-form .icons {
   display: flex;
@@ -197,6 +228,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.contact .contact-contents .contact-form .icons .contact-icon:hover {
+  opacity: 0.8;
 }
 
 .c-title {
@@ -327,6 +361,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   padding: 3.2rem 0;
+  gap: 10px;
 }
 @media screen and (max-width: 600px) {
   .card .slide-content {
@@ -335,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .card .slide-content .slide-text {
   font-size: 0.938rem;
-  line-height: 1.6;
+  line-height: 2;
 }
 @media screen and (max-width: 600px) {
   .card .slide-content .slide-text {
@@ -438,38 +473,6 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #ffffff;
   border-radius: 50%;
   cursor: default;
-}
-
-.contact-button {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.25rem;
-  border-radius: 20px;
-  color: #1e1e1e;
-  background-color: #ffffff;
-}
-.contact-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 1.875rem;
-  display: block;
-  width: 0.938rem;
-  height: 0.938rem;
-  border: solid #1e1e1e;
-  border-width: 3px 3px 0 0;
-  transform: translateY(-50%) rotate(45deg);
-}
-.contact-button::before {
-  content: "お気軽にお問い合わせください！";
-  position: absolute;
-  display: inline-block;
-  font-size: 0.938rem;
-  color: #ffffff;
-  top: -15px;
-  transform: translateY(-100%);
 }
 
 .hamburger-trigger,
