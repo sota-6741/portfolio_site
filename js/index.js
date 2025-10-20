@@ -5,9 +5,11 @@
 
 import {initHamburgerMenu} from './modules/hamburger-menu.js';
 import {initSwiper} from './modules/swiper.js';
+import {initsectionTitleAnimation} from './modules/sectionTitleAnimation.js';
 
-// 最小限の初期化: DOM が読み込まれたらハンバーガーメニューだけ初期化する
+// 初期化
 document.addEventListener('DOMContentLoaded', () => {
+  initsectionTitleAnimation()
   initHamburgerMenu();
   initSwiper()
 });
