@@ -43,7 +43,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transform: translateY(40px);
+            transform: translateY(43px);
 
             @include m.break-point("contact-sp") {
                 align-self: center;
@@ -54,13 +54,47 @@
             //     font-size: 0.938rem;
             //     margin-bottom: f.layout(contact-text-margin);
             // }
+            .contact-button-wrapper {
+                position: relative;
+                margin-bottom: f.layout(contact-button-margin);
+
+                &:hover .contact-button {
+                    opacity: 0.8;
+                }
+
+                &::before {
+                    content: "お気軽にお問い合わせください！";
+                    position: absolute;
+                    display: inline-block;
+                    font-size: 0.938rem;
+                    color: f.color(color-base);
+                    top: -15px;
+                    transform: translateY(-100%);
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-100%);
+                    white-space: nowrap;
+                }
+            }
 
             .contact-button {
                 @include m.button() {
                     width: f.fluid-clamp(f.layout(contact-button-width-sp), f.layout(contact-button-width));
                     height: f.layout(contact-button-height);
+
+                    // 右端に矢印アイコンを配置
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: 1.875rem;
+                        display: block;
+                        width: 0.938rem;
+                        height: 0.938rem;
+                        border: solid f.color(color-font-base);
+                        border-width: 2px 2px 0 0;
+                        transform: translateY(-50%) rotate(45deg);
+                    }
                 };
-                margin-bottom: f.layout(contact-button-margin);
             }
 
             .icons {
@@ -84,6 +118,9 @@
                         width: f.layout(contact-icon-img-size);
                         height: f.layout(contact-icon-img-size);
                         object-fit: contain;
+                    }
+                    &:hover {
+                        opacity: 0.8;
                     }
                 }
             }
