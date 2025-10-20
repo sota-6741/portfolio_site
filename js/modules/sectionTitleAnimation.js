@@ -27,7 +27,6 @@ export function initsectionTitleAnimation() {
                 scrollTrigger: {
                     trigger: item,
                     start: "top center",
-                    markers: true,
                 }
             }
         )
