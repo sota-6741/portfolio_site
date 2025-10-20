@@ -12,6 +12,13 @@
         <link rel="stylesheet" href="./reset.css" />
         <link rel="stylesheet" href="./style.css" />
 
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.138.3/build/three.module.js"
+                }
+            }
+        </script>
         <script>
             (function (d) {
                 var config = {
@@ -42,6 +49,16 @@
                 s.parentNode.insertBefore(tk, s);
             })(document);
         </script>
+        <style>
+            canvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100vw;
+                height: 100vh;
+            }
+        </style>
     </head>
 
     <body>
@@ -215,5 +232,6 @@
 
         <!-- メインアプリケーション（ES6モジュール） -->
         <script type="module" src="./js/index.js"></script>
+        <script type="module" src="./js/main.js"></script>
     </body>
 </html>
