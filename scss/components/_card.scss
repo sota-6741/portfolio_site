@@ -169,7 +169,6 @@
         transition: none;
         pointer-events: none;
         opacity: f.opacity(button-disable);
-        border: 1px solid f.color(color-button-outline);
         border-radius: 50%;
         cursor: default;
     }
