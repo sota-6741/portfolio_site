@@ -43,7 +43,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transform: translateY(35px);
+            transform: translateY(40px);
 
             @include m.break-point("contact-sp") {
                 align-self: center;
