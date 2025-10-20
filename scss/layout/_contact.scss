@@ -43,17 +43,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transform: translateY(43px);
+            transform: translateY(55px);
 
             @include m.break-point("contact-sp") {
                 align-self: center;
             }
 
-
-            // .contact-form-text {
-            //     font-size: 0.938rem;
-            //     margin-bottom: f.layout(contact-text-margin);
-            // }
             .contact-button-wrapper {
                 position: relative;
                 margin-bottom: f.layout(contact-button-margin);
