@@ -115,7 +115,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   margin-inline: auto;
   position: relative;
-  z-index: 3;
   padding-top: clamp(40px, 40px + (9.375rem - 40px) * (100vw - 375px) / (1366px - 375px), 9.375rem);
   padding-bottom: clamp(20px, 20px + (6.25rem - 20px) * (100vw - 375px) / (1366px - 375px), 6.25rem);
   border-radius: 20px 20px 0 0;
@@ -159,6 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   .contact .contact-contents .c-section-title {
     align-self: flex-start;
     text-align: left;
+    margin-bottom: 100px;
   }
 }
 .contact .contact-contents .contact-form {
@@ -171,6 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 950px) {
   .contact .contact-contents .contact-form {
     align-self: center;
+    transform: translateY(0px);
   }
 }
 .contact .contact-contents .contact-form .contact-button-wrapper {
@@ -223,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
   align-self: flex-end;
   align-items: center;
   gap: 0.938rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(20px, 20px + (40px - 20px) * (100vw - 375px) / (1366px - 375px), 40px);
 }
 .contact .contact-contents .contact-form .icons .contact-icon {
   width: 50px;
@@ -243,6 +244,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .contact .contact-contents .contact-form .icons .contact-icon:hover {
   opacity: 0.8;
+}
+.contact .contact-contents .copy-right {
+  font-size: 0.938rem;
+  align-self: end;
 }
 
 .c-title {
@@ -693,11 +698,6 @@ h1, h2, h3, h4, h5, h6 {
     -o-object-fit: contain;
        object-fit: contain;
   }
-}
-
-.copy-right {
-  font-size: 0.938rem;
-  align-self: end;
 }
 
 .scroll-indicator {
