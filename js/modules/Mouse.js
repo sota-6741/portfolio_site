@@ -24,7 +24,7 @@ class Mouse{
         this.timer = setTimeout(() => {
             this.mouseMoved = false;
         }, 100);
-        
+
     }
     onDocumentMouseMove( event ) {
         this.setCoords( event.clientX, event.clientY );
@@ -38,7 +38,7 @@ class Mouse{
     onDocumentTouchMove( event ) {
         if ( event.touches.length === 1 ) {
             // event.preventDefault();
-            
+
             this.setCoords( event.touches[ 0 ].pageX, event.touches[ 0 ].pageY );
         }
     }
