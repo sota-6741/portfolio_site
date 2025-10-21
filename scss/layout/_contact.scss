@@ -2,28 +2,28 @@
 @use "../abstracts/mixins" as m;
 @use "./base_content" as *;
 
-// TODO: お気軽に〜を擬似要素として実装 未デバッグ
-// TODO: section-titleとボタンの高さを揃える 未デバッグ
-// TODO: 矢印と文字の高さを揃える 未デバッグ
+// TODO: お気軽に〜を擬似要素として実装 修正済み
+// TODO: section-titleとボタンの高さを揃える 修正済み
+// TODO: 矢印と文字の高さを揃える 修正済み
 
 .contact {
     background-color: #212828;
     color: f.color(color-base);
     margin-inline: auto;
     position: relative;
-    z-index: 3;
     padding-top: f.fluid-clamp(f.layout(contact-padding-top-sp), f.layout(contact-padding-top));
     padding-bottom: f.fluid-clamp(f.layout(contact-padding-bottom-sp), f.layout(contact-padding-bottom));
     border-radius: f.layout(radius-base) f.layout(radius-base) 0 0;
 
     .contact-contents {
-        @extend .base-content;
+        @extend .base-content ;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding-inline: f.fluid-clamp(f.layout(contact-contents-padding-sp), f.layout(contact-contents-padding));
         margin-block-end: 0;
+        // margin-bottom: f.fluid-clamp(20px, 100px);
 
         @include m.break-point("contact-sp") {
             flex-direction: column;
@@ -35,6 +35,7 @@
             @include m.break-point("contact-sp") {
                 align-self: flex-start;
                 text-align: left;
+                margin-bottom: 100px;
             }
         }
 
@@ -47,6 +48,7 @@
 
             @include m.break-point("contact-sp") {
                 align-self: center;
+                transform: translateY(0px);
             }
 
             .contact-button-wrapper {
@@ -99,7 +101,7 @@
                 align-self: flex-end;
                 align-items: center;
                 gap: f.layout(contact-icons-gap);
-                margin-bottom: f.layout(contact-button-margin);
+                margin-bottom: f.fluid-clamp(20px, 40px);
 
                 .contact-icon {
                     width: f.layout(contact-icon-size);
@@ -121,6 +123,10 @@
                     }
                 }
             }
+        }
+        .copy-right {
+            font-size: f.typography(font-size-copy-right);
+            align-self: end;
         }
     }
 }
