@@ -38,7 +38,6 @@ header nav {
 
 main {
   position: relative;
-  z-index: 1;
 }
 
 canvas {
