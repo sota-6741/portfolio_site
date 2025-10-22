@@ -17,7 +17,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    pointer-events: none;
+    z-index: 3;
 
     nav {
         position: relative;
