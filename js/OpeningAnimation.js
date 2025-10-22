@@ -1,4 +1,5 @@
 import {initLoadingTextAnimation} from "./modules/LoadingText.js";
+import { simulateInitialDrag } from "./SimulateInitialDrag.js";
 
 export function initOpeningAnimation() {
     window.addEventListener("load", async () => {
@@ -21,7 +22,7 @@ export function initOpeningAnimation() {
             ease: "power2.inOut"
         });
 
-        gsap.to(mask, {
+        await openingTL.to(mask, {
             duration: 1.5,
             opacity: 0,
             ease: "power2.out",
@@ -30,5 +31,7 @@ export function initOpeningAnimation() {
             document.body.style.overflow = "auto";
             }
         });
+
+        await simulateInitialDrag();
     })
 }
