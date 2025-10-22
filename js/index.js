@@ -1,15 +1,12 @@
-/**
- * ポートフォリオサイト - メインエントリーポイント
- * モジュール分割版：各機能を独立したファイルに分離
- */
-
+import {initOpeningAnimation} from './OpeningAnimation.js';
 import {initHamburgerMenu} from './modules/hamburger-menu.js';
 import {initSwiper} from './modules/swiper.js';
 import {initsectionTitleAnimation} from './modules/sectionTitleAnimation.js';
 
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
-  initsectionTitleAnimation()
+  initOpeningAnimation(); // オープニングアニメーションを呼ぶ
+  initsectionTitleAnimation();
   initHamburgerMenu();
-  initSwiper()
+  initSwiper();
 });
