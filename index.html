@@ -51,16 +51,6 @@
                 s.parentNode.insertBefore(tk, s);
             })(document);
         </script>
-        <style>
-            canvas {
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                width: 100vw;
-                height: 100vh;
-            }
-        </style>
     </head>
 
     <body>
@@ -77,16 +67,27 @@
         </header>
 
         <main>
-                <div class="main-visual" id="home">
-                    <div class="title-group">
-                        <h1 class="c-title__main">
-                            <span class="line-break">NAKANO</span>
-                            <span class="line-break">FOLIO</span>
-                        </h1>
-                    <p class="c-title__sub">誰かの役に立つために成長を続けたい。</p>
+            <!-- opening -->
+            <div class="opening">
+                <div class="mask"></div>
+                    <div class="typing-container">
+                        <div class="typing-content" id="typing">
+                        <span class="caret" id="caret"></span>
+                        </div>
                     </div>
-                    <div class="scroll-indicator">SCROLL</div>
+            </div>
+
+            <!-- main-visual -->
+            <div class="main-visual" id="home">
+                <div class="title-group">
+                    <h1 class="c-title__main">
+                        <span class="line-break">NAKANO</span>
+                        <span class="line-break">FOLIO</span>
+                    </h1>
+                <p class="c-title__sub">誰かの役に立つために成長を続けたい。</p>
                 </div>
+                <div class="scroll-indicator">SCROLL</div>
+            </div>
 
             <!-- about me -->
             <section class="about-me" id="about">
