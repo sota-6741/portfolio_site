@@ -14,6 +14,9 @@
     padding-top: f.fluid-clamp(f.layout(contact-padding-top-sp), f.layout(contact-padding-top));
     padding-bottom: f.fluid-clamp(f.layout(contact-padding-bottom-sp), f.layout(contact-padding-bottom));
     border-radius: f.layout(radius-base) f.layout(radius-base) 0 0;
+    @include m.break-point("contact-sp") {
+        padding-bottom: 0px;
+    }
 
     .contact-contents {
         @extend .base-content ;
@@ -22,8 +25,8 @@
         justify-content: space-between;
         align-items: center;
         padding-inline: f.fluid-clamp(f.layout(contact-contents-padding-sp), f.layout(contact-contents-padding));
+        padding-bottom: 55px;
         margin-block-end: 0;
-        // margin-bottom: f.fluid-clamp(20px, 100px);
 
         @include m.break-point("contact-sp") {
             flex-direction: column;
