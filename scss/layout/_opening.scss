@@ -29,7 +29,7 @@
         display: inline-block;
         white-space: nowrap;
         text-align: left;
-        font-size: clamp(32px, 6vw, 80px);
+        font-size: f.fluid-clamp(16px, 24px);
         color: f.color(color-font-base);
         line-height: 1;
         .caret {
