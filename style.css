@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   white-space: nowrap;
   text-align: left;
-  font-size: clamp(32px, 6vw, 80px);
+  font-size: clamp(16px, 16px + (24px - 16px) * (100vw - 375px) / (1366px - 375px), 24px);
   color: #1e1e1e;
   line-height: 1;
 }
