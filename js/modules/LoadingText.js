@@ -23,7 +23,7 @@ export async function initLoadingTextAnimation() {
     for (const ch of kana) {
         el.textContent += ch;
         // ランダムな遅延
-        await sleep(30 + Math.random() * 40);
+        await sleep(50 + Math.random() * 40);
     }
     }
 
@@ -34,11 +34,11 @@ export async function initLoadingTextAnimation() {
         return;
     }
     el.classList.add("kana");
-    await sleep(100);
+    await sleep(200);
     el.textContent = kanji;
     el.classList.remove("kana");
     el.classList.add("kanji");
-    await sleep(60);
+    await sleep(120);
     }
 
     async function typeSentence(seq) {
