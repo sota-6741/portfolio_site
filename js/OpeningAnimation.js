@@ -8,6 +8,7 @@ export class InitOpeningAnimation {
         this.typingContainer = document.querySelector(".typing-container");
         this.typingEl = document.getElementById("typing");
 
+        // TODO: Now Loadingの表示はキャッシュがない場合のみ．
         this._started = false;
         this._ended = false;
 
