@@ -79,10 +79,10 @@ export class InitOpeningAnimation {
         await openingTL.to(this.typingContainer, {
             opacity: 0,
             filter: "blur(10px)",
-            duration: 1,
+            duration: 1.5,
             ease: "power2.inOut"
         }).to(this.mask, {
-            duration: 1.5,
+            duration: 3,
             opacity: 0,
             ease: "power2.out",
             onComplete: () => {
