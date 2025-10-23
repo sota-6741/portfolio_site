@@ -8,26 +8,36 @@ export class InitOpeningAnimation {
         this.typingContainer = document.querySelector(".typing-container");
         this.typingEl = document.getElementById("typing");
 
-        // TODO: Now Loadingの表示はキャッシュがない場合のみ．
         this._started = false;
         this._ended = false;
+        this._endPlayed = false;
 
         this.loader = new LoadingText();
 
         const startPromise = new Promise(resolve => {
             const start = async () => {
-                await this.startLoadingAnimation();
-                resolve();
+                if (this._started) return;
+                this._started = true;
+
+                // TODO: Now Loadingの表示初回のみ．
+                try {
+                    const alreadyVisited = sessionStorage.getItem("visited");
+
+                    if (!alreadyVisited) {
+                        await this.startLoadingAnimation();
+                        sessionStorage.setItem("visited", "true");
+                    }
+                    resolve();
+                } catch(err) {
+                    console.error("startLoadingAnimation failed", err);
+                    resolve();
+                }
             };
 
-            // DOM が既に interactive/complete の場合は即開始
             if (document.readyState === "interactive" || document.readyState === "complete") {
-                start().catch(err => console.error("startLoadingAnimation failed:", err));
+                start();
             } else {
-                // DOMContentLoaded を使う（DOMContentLoaded は DOM 構築完了を表す）
-                document.addEventListener("DOMContentLoaded", () => {
-                    start().catch(err => console.error("startLoadingAnimation failed:", err));
-                }, { once: true });
+                document.addEventListener("DOMContentLoaded", start, { once: true });
             }
         });
 
@@ -35,6 +45,7 @@ export class InitOpeningAnimation {
         window.addEventListener("load", async () => {
             if (this._ended) return;
             this._ended = true;
+
             try {
                 await startPromise;
                 await this.endLoadingAnimation();
@@ -46,19 +57,20 @@ export class InitOpeningAnimation {
     }
 
     async startLoadingAnimation() {
-        if (this._started) return;
-        this._started = true;
         if (this.loader && typeof this.loader.loadingText === "function") {
-            // loadingText が Promise を返す想定
             await this.loader.loadingText();
         }
     }
 
     async endLoadingAnimation() {
+        if (this.endPlayed) return;
+        this.endPlayed = true;
+
         await this.loader.removeTextRightToLeft();
         await this.loader.loadedText();
 
         const openingTL = gsap.timeline();
+
         // 初期スタイル設定
         openingTL.set(this.opening, { display: "block", opacity: 1 });
         openingTL.set(this.mask, { opacity: 1 });
@@ -74,8 +86,8 @@ export class InitOpeningAnimation {
             opacity: 0,
             ease: "power2.out",
             onComplete: () => {
-            this.opening.style.display = "none";
-            document.body.style.overflow = "auto";
+                this.opening.style.display = "none";
+                document.body.style.overflow = "auto";
             }
         });
     }
