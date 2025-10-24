@@ -28,30 +28,16 @@
     .swiper-button-next {
         position: absolute;
         z-index: 1;
-        top: calc($slide-aspect-ratio / 2);
-        transform: translateY(-50%);
-
-        @include m.break-point(swiper-sp) {
-            top: 50%;
-        }
+        top: f.fluid-clamp(61px, 150px);
+        transform: translateY(-25%);
     }
 
     .swiper-button-prev {
         left: f.swiper-button-position(default, left);
-
-        @include m.break-point(swiper-sp) {
-            left: f.swiper-button-position(sp, left);
-            right: auto;
-        }
     }
 
     .swiper-button-next {
         right: f.swiper-button-position(default, right);
-
-        @include m.break-point(swiper-sp) {
-            right: f.swiper-button-position(sp, right);
-            left: auto;
-        }
     }
 
     .slide-media {
