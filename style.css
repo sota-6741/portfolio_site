@@ -403,32 +403,14 @@ h1, h2, h3, h4, h5, h6 {
 .card .swiper-button-next {
   position: absolute;
   z-index: 1;
-  top: 29.4117647059%;
-  transform: translateY(-50%);
-}
-@media screen and (max-width: 600px) {
-  .card .swiper-button-prev,
-  .card .swiper-button-next {
-    top: 50%;
-  }
+  top: clamp(61px, 61px + (150px - 61px) * (100vw - 375px) / (1366px - 375px), 150px);
+  transform: translateY(-25%);
 }
 .card .swiper-button-prev {
   left: -25px;
 }
-@media screen and (max-width: 600px) {
-  .card .swiper-button-prev {
-    left: -20x;
-    right: auto;
-  }
-}
 .card .swiper-button-next {
   right: -65px;
-}
-@media screen and (max-width: 600px) {
-  .card .swiper-button-next {
-    right: -26px;
-    left: auto;
-  }
 }
 .card .slide-media {
   padding-top: 58.8235294118%;
