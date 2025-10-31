@@ -6,6 +6,7 @@ $tokens-color: (
     color-button-base: #939393,
     color-button-outline: #ffffff,
     color-borderline: #1E1E1E,
+    contact-bg: #212828,
     // swiper colors
     swiper-bg: #f8f8f8,
     swiper-white: #fff,
@@ -22,7 +23,10 @@ $tokens-opacity: (
 /* animation tokens */
 $tokens-animation: (
     easing: cubic-bezier(.2, 1, .2, 1),
-    transition: .8s cubic-bezier(.2, 1, .2, 1)
+    transition: .8s cubic-bezier(.2, 1, .2, 1),
+    duration-normal: 0.5s,
+    easing-ease: ease,
+    caret-blink-duration: 0.6s
 ) !default;
 
 /* typography tokens */
@@ -115,9 +119,19 @@ $tokens-layout: (
     borderline-second-bottom-sp: -19px,
 
 
+    /* hamburger */
+    hamburger-bar-height: 2px,
+
 
     /* insert photo */
     insert-photo-height: 400px,
+
+
+    /* opening */
+    caret-width: 3px,
+    caret-margin-left: 0.2ch,
+    kana-underline-thickness: 4px,
+    kana-underline-offset: 7px,
 
 
     /* swiper layout */
